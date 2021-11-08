@@ -18,6 +18,7 @@ namespace CoffeeMachine2._0
             InitializeComponent();
         }
 
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelCookStage.Text = cf.cookingStage;
@@ -72,6 +73,7 @@ namespace CoffeeMachine2._0
         private void panel1_DragDrop(object sender, DragEventArgs e)
         {
             //cf.balance += e.
+
         }
     }
 }

@@ -29,6 +29,7 @@ namespace CoffeeMachine2._0
         /// </summary>
         private void InitializeComponent()
         {
+
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelCookStage = new System.Windows.Forms.Label();
@@ -160,6 +161,7 @@ namespace CoffeeMachine2._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1075, 648);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -179,9 +181,11 @@ namespace CoffeeMachine2._0
             this.ResumeLayout(false);
             this.PerformLayout();
 
+
         }
 
         #endregion
+
 
         private System.Windows.Forms.Label labelCookStage;
         private System.Windows.Forms.Button butCook;
@@ -195,6 +199,7 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.Label labelUserTemperature;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+
     }
 }
 
