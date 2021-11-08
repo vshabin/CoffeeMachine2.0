@@ -16,5 +16,11 @@ namespace CoffeeMachine2._0
         {
             InitializeComponent();
         }
+
+        private void openAdminPanel_Click(object sender, EventArgs e)
+        {
+            Form adminPanel = new AdminPanel();
+            adminPanel.Show();
+        }
     }
 }
