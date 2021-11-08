@@ -8,6 +8,7 @@ namespace CoffeeMachine2._0
 {
     class CoffeeMachine
     {
+        //ок
         public int balance = 0;
         public int change = 0;
         public string cookingStage = "Ожидаю заказ...";
