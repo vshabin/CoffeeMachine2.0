@@ -16,6 +16,7 @@ namespace CoffeeMachine2._0
         int cost;
         bool temperature, sugar;
         int  userStrenght;
+
         public Drink(string uname="Без названия",
             Image upicture=null,
             int ucost=10,
