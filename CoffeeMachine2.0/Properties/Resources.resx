@@ -121,4 +121,10 @@
   <data name="DefaultIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngwing.com (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GetMoneyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GetMoneyIcon.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monetaIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monetaIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
