@@ -75,5 +75,11 @@ namespace CoffeeMachine2._0
             //cf.balance += e.
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AdminPanel a = new AdminPanel();
+            a.Show();
+        }
     }
 }

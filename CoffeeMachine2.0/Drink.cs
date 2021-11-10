@@ -11,11 +11,11 @@ namespace CoffeeMachine2._0
     class Drink
     {
 
-        string name;
-        Image picture;
-        int cost;
-        bool temperature, sugar;
-        int  userStrenght;
+        public string name;
+        public Image picture;
+        public int cost;
+        public bool temperature, sugar;
+        public int  userStrenght;
 
         public Drink(string uname="Без названия",
             Image upicture=null,

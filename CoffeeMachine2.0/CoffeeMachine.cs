@@ -15,7 +15,7 @@ namespace CoffeeMachine2._0
 
         public Drink selectedDrink = new Drink();
         
-        Dictionary<int, Drink> drinks = new Dictionary<int, Drink>();
+        static public List<Drink> drinks = new List<Drink>();
 
         public async void Cook()//готовка напитка
         {
