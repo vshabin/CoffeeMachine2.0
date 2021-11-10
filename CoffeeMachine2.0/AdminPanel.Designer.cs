@@ -49,6 +49,7 @@ namespace CoffeeMachine2._0
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.boolSugar = new System.Windows.Forms.CheckBox();
             this.boolTemperature = new System.Windows.Forms.CheckBox();
+            this.SaveEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
@@ -71,6 +72,7 @@ namespace CoffeeMachine2._0
             this.EditDrink.TabIndex = 1;
             this.EditDrink.Text = "Редактировать";
             this.EditDrink.UseVisualStyleBackColor = true;
+            this.EditDrink.Click += new System.EventHandler(this.EditDrink_Click);
             // 
             // DeleteDrink
             // 
@@ -80,6 +82,7 @@ namespace CoffeeMachine2._0
             this.DeleteDrink.TabIndex = 2;
             this.DeleteDrink.Text = "Удалить";
             this.DeleteDrink.UseVisualStyleBackColor = true;
+            this.DeleteDrink.Click += new System.EventHandler(this.DeleteDrink_Click);
             // 
             // label1
             // 
@@ -202,7 +205,7 @@ namespace CoffeeMachine2._0
             // 
             // cost
             // 
-            this.cost.Location = new System.Drawing.Point(127, 48);
+            this.cost.Location = new System.Drawing.Point(126, 54);
             this.cost.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -220,6 +223,7 @@ namespace CoffeeMachine2._0
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.ErrorImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
+            this.pictureBox1.Image = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
             this.pictureBox1.InitialImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
             this.pictureBox1.Location = new System.Drawing.Point(19, 227);
             this.pictureBox1.Name = "pictureBox1";
@@ -246,11 +250,23 @@ namespace CoffeeMachine2._0
             this.boolTemperature.TabIndex = 19;
             this.boolTemperature.UseVisualStyleBackColor = true;
             // 
+            // SaveEdit
+            // 
+            this.SaveEdit.Location = new System.Drawing.Point(113, 400);
+            this.SaveEdit.Name = "SaveEdit";
+            this.SaveEdit.Size = new System.Drawing.Size(177, 23);
+            this.SaveEdit.TabIndex = 6;
+            this.SaveEdit.Text = "Сохранить изменения";
+            this.SaveEdit.UseVisualStyleBackColor = true;
+            this.SaveEdit.Visible = false;
+            this.SaveEdit.Click += new System.EventHandler(this.SaveEdit_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SaveEdit);
             this.Controls.Add(this.AddDrink);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -291,5 +307,6 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.CheckBox boolTemperature;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown cost;
+        private System.Windows.Forms.Button SaveEdit;
     }
 }
