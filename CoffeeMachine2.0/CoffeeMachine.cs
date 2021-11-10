@@ -14,14 +14,19 @@ namespace CoffeeMachine2._0
         public string cookingStage = "Ожидаю заказ...";
 
         public Drink selectedDrink = new Drink();
-        
-        Dictionary<int, Drink> drinks = new Dictionary<int, Drink>();
+
+        public static List<Drink> drinks = new List<Drink>();
+
+        public void SetDefaultDrinks()
+        {
+            drinks.Add(new Drink("Капучино", null, 15, true, true, 5, 10000));
+        }
 
         public async void Cook()//готовка напитка
         {
             /* Добавить текст с теми параметрами, которые выбрал пользователь в строку ниже */
             cookingStage = "Готовлю ваш заказ...";
-            await Task.Delay(5000);
+            await Task.Delay(selectedDrink.cookingTime);
             CountChange();
             cookingStage = string.Format("Ваш заказ готов! Всего доброго! Ваши {0} рублей.", change);
         }
@@ -38,9 +43,9 @@ namespace CoffeeMachine2._0
             change = 0;
         }
 
-        void SetBalance()//добавление внесённой суммы к балансу
+        public void SetBalance(int balance)//добавление внесённой суммы к балансу
         {
-
+            this.balance += balance;
         }
 
         public void SetDrink()//занесение выбранного напитка

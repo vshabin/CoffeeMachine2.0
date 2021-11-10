@@ -13,6 +13,7 @@ namespace CoffeeMachine2._0
     public partial class Form1 : Form
     {
         CoffeeMachine cf = new CoffeeMachine();
+        private string userBalance = "Внесено: ";
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace CoffeeMachine2._0
             timer1.Interval = 1;
             timer1.Start();
             cf.Cook();
-            await Task.Delay(6000);
+            await Task.Delay(cf.selectedDrink.cookingTime + 1000);
             timer1.Stop();
         }
 
@@ -60,20 +61,20 @@ namespace CoffeeMachine2._0
             labelUserTemperature.Text = tempDrinkDesign;
         }
 
-        private void panel1_DragEnter(object sender, DragEventArgs e)
+        private void panelCoinOne_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelCoinOne.DoDragDrop(int.Parse(panelCoinOne.Tag.ToString()), DragDropEffects.Move);
+        }
+
+        private void panelCoinAcceptor_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
         }
 
-        private void panel1_DragLeave(object sender, EventArgs e)
+        private void panelCoinAcceptor_DragDrop(object sender, DragEventArgs e)
         {
-            
-        }
-
-        private void panel1_DragDrop(object sender, DragEventArgs e)
-        {
-            //cf.balance += e.
-
+            cf.SetBalance(int.Parse(e.Data.GetData(typeof(int)).ToString()));
+            labelBalance.Text = userBalance + cf.balance.ToString();
         }
     }
 }

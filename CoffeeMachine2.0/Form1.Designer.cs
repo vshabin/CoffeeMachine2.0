@@ -29,7 +29,6 @@ namespace CoffeeMachine2._0
         /// </summary>
         private void InitializeComponent()
         {
-
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelCookStage = new System.Windows.Forms.Label();
@@ -42,8 +41,9 @@ namespace CoffeeMachine2._0
             this.tbTemperatureProp = new System.Windows.Forms.TrackBar();
             this.labelTemperature = new System.Windows.Forms.Label();
             this.labelUserTemperature = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelCoinAcceptor = new System.Windows.Forms.Panel();
+            this.panelCoinOne = new System.Windows.Forms.Panel();
+            this.labelBalance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,7 @@ namespace CoffeeMachine2._0
             // labelCookStage
             // 
             this.labelCookStage.AutoSize = true;
-            this.labelCookStage.Location = new System.Drawing.Point(80, 59);
+            this.labelCookStage.Location = new System.Drawing.Point(79, 73);
             this.labelCookStage.Name = "labelCookStage";
             this.labelCookStage.Size = new System.Drawing.Size(91, 13);
             this.labelCookStage.TabIndex = 0;
@@ -136,35 +136,44 @@ namespace CoffeeMachine2._0
             this.labelUserTemperature.TabIndex = 7;
             this.labelUserTemperature.Text = "Холодный";
             // 
-            // panel1
+            // panelCoinAcceptor
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.GetMoneyIcon;
-            this.panel1.Location = new System.Drawing.Point(576, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(258, 104);
-            this.panel1.TabIndex = 9;
-            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
-            this.panel1.DragLeave += new System.EventHandler(this.panel1_DragLeave);
+            this.panelCoinAcceptor.AllowDrop = true;
+            this.panelCoinAcceptor.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.GetMoneyIcon;
+            this.panelCoinAcceptor.Location = new System.Drawing.Point(576, 59);
+            this.panelCoinAcceptor.Name = "panelCoinAcceptor";
+            this.panelCoinAcceptor.Size = new System.Drawing.Size(258, 104);
+            this.panelCoinAcceptor.TabIndex = 9;
+            this.panelCoinAcceptor.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelCoinAcceptor_DragDrop);
+            this.panelCoinAcceptor.DragOver += new System.Windows.Forms.DragEventHandler(this.panelCoinAcceptor_DragOver);
             // 
-            // panel2
+            // panelCoinOne
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Location = new System.Drawing.Point(888, 59);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(100, 100);
-            this.panel2.TabIndex = 10;
-            this.panel2.Tag = "1";
+            this.panelCoinOne.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCoinOne.BackgroundImage")));
+            this.panelCoinOne.Location = new System.Drawing.Point(888, 59);
+            this.panelCoinOne.Name = "panelCoinOne";
+            this.panelCoinOne.Size = new System.Drawing.Size(100, 100);
+            this.panelCoinOne.TabIndex = 10;
+            this.panelCoinOne.Tag = "1";
+            this.panelCoinOne.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
+            // 
+            // labelBalance
+            // 
+            this.labelBalance.AutoSize = true;
+            this.labelBalance.Location = new System.Drawing.Point(78, 60);
+            this.labelBalance.Name = "labelBalance";
+            this.labelBalance.Size = new System.Drawing.Size(56, 13);
+            this.labelBalance.TabIndex = 11;
+            this.labelBalance.Text = "Внесено: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(1075, 648);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelBalance);
+            this.Controls.Add(this.panelCoinOne);
+            this.Controls.Add(this.panelCoinAcceptor);
             this.Controls.Add(this.labelUserTemperature);
             this.Controls.Add(this.labelTemperature);
             this.Controls.Add(this.tbTemperatureProp);
@@ -181,7 +190,6 @@ namespace CoffeeMachine2._0
             this.ResumeLayout(false);
             this.PerformLayout();
 
-
         }
 
         #endregion
@@ -197,9 +205,9 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.TrackBar tbTemperatureProp;
         private System.Windows.Forms.Label labelTemperature;
         private System.Windows.Forms.Label labelUserTemperature;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-
+        private System.Windows.Forms.Panel panelCoinAcceptor;
+        private System.Windows.Forms.Panel panelCoinOne;
+        private System.Windows.Forms.Label labelBalance;
     }
 }
 
