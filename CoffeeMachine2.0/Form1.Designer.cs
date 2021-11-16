@@ -44,6 +44,7 @@ namespace CoffeeMachine2._0
             this.panelCoinAcceptor = new System.Windows.Forms.Panel();
             this.panelCoinOne = new System.Windows.Forms.Panel();
             this.labelBalance = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).BeginInit();
             this.SuspendLayout();
@@ -166,11 +167,22 @@ namespace CoffeeMachine2._0
             this.labelBalance.TabIndex = 11;
             this.labelBalance.Text = "Внесено: ";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(-2, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 648);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.panelCoinOne);
             this.Controls.Add(this.panelCoinAcceptor);
@@ -208,6 +220,7 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.Panel panelCoinAcceptor;
         private System.Windows.Forms.Panel panelCoinOne;
         private System.Windows.Forms.Label labelBalance;
+        private System.Windows.Forms.Button button1;
     }
 }
 

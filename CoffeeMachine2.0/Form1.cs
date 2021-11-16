@@ -76,5 +76,11 @@ namespace CoffeeMachine2._0
             cf.SetBalance(int.Parse(e.Data.GetData(typeof(int)).ToString()));
             labelBalance.Text = userBalance + cf.balance.ToString();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form ap = new AdminPanel();
+            ap.Show();
+        }
     }
 }

@@ -45,15 +45,22 @@ namespace CoffeeMachine2._0
             this.label9 = new System.Windows.Forms.Label();
             this.tbStrenght = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbTea = new System.Windows.Forms.RadioButton();
+            this.rbCoffee = new System.Windows.Forms.RadioButton();
+            this.rbWater = new System.Windows.Forms.RadioButton();
             this.cost = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.boolSugar = new System.Windows.Forms.CheckBox();
             this.boolTemperature = new System.Windows.Forms.CheckBox();
             this.SaveEdit = new System.Windows.Forms.Button();
+            this.rbCustom = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TimeToCook = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).BeginInit();
             this.SuspendLayout();
             // 
             // ListOfDrinks
@@ -61,12 +68,12 @@ namespace CoffeeMachine2._0
             this.ListOfDrinks.FormattingEnabled = true;
             this.ListOfDrinks.Location = new System.Drawing.Point(468, 39);
             this.ListOfDrinks.Name = "ListOfDrinks";
-            this.ListOfDrinks.Size = new System.Drawing.Size(320, 355);
+            this.ListOfDrinks.Size = new System.Drawing.Size(320, 433);
             this.ListOfDrinks.TabIndex = 0;
             // 
             // EditDrink
             // 
-            this.EditDrink.Location = new System.Drawing.Point(495, 418);
+            this.EditDrink.Location = new System.Drawing.Point(495, 498);
             this.EditDrink.Name = "EditDrink";
             this.EditDrink.Size = new System.Drawing.Size(121, 23);
             this.EditDrink.TabIndex = 1;
@@ -76,7 +83,7 @@ namespace CoffeeMachine2._0
             // 
             // DeleteDrink
             // 
-            this.DeleteDrink.Location = new System.Drawing.Point(640, 418);
+            this.DeleteDrink.Location = new System.Drawing.Point(640, 498);
             this.DeleteDrink.Name = "DeleteDrink";
             this.DeleteDrink.Size = new System.Drawing.Size(121, 23);
             this.DeleteDrink.TabIndex = 2;
@@ -87,15 +94,15 @@ namespace CoffeeMachine2._0
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(109, 15);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 21);
+            this.label1.Size = new System.Drawing.Size(693, 21);
             this.label1.TabIndex = 4;
             this.label1.Text = "Добавить напиток";
             // 
             // AddDrink
             // 
-            this.AddDrink.Location = new System.Drawing.Point(113, 400);
+            this.AddDrink.Location = new System.Drawing.Point(116, 498);
             this.AddDrink.Name = "AddDrink";
             this.AddDrink.Size = new System.Drawing.Size(177, 23);
             this.AddDrink.TabIndex = 5;
@@ -126,7 +133,7 @@ namespace CoffeeMachine2._0
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 227);
+            this.label3.Location = new System.Drawing.Point(124, 382);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 2;
@@ -134,7 +141,7 @@ namespace CoffeeMachine2._0
             // 
             // uploadImage
             // 
-            this.uploadImage.Location = new System.Drawing.Point(126, 258);
+            this.uploadImage.Location = new System.Drawing.Point(126, 410);
             this.uploadImage.Name = "uploadImage";
             this.uploadImage.Size = new System.Drawing.Size(154, 23);
             this.uploadImage.TabIndex = 3;
@@ -153,7 +160,7 @@ namespace CoffeeMachine2._0
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(20, 82);
+            this.label5.Location = new System.Drawing.Point(20, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 41);
             this.label5.TabIndex = 6;
@@ -161,7 +168,7 @@ namespace CoffeeMachine2._0
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(20, 132);
+            this.label6.Location = new System.Drawing.Point(20, 206);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 41);
             this.label6.TabIndex = 9;
@@ -169,7 +176,7 @@ namespace CoffeeMachine2._0
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(16, 183);
+            this.label9.Location = new System.Drawing.Point(16, 257);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 41);
             this.label9.TabIndex = 17;
@@ -177,7 +184,7 @@ namespace CoffeeMachine2._0
             // 
             // tbStrenght
             // 
-            this.tbStrenght.Location = new System.Drawing.Point(126, 179);
+            this.tbStrenght.Location = new System.Drawing.Point(126, 253);
             this.tbStrenght.Name = "tbStrenght";
             this.tbStrenght.Size = new System.Drawing.Size(181, 45);
             this.tbStrenght.TabIndex = 18;
@@ -185,6 +192,12 @@ namespace CoffeeMachine2._0
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.TimeToCook);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.rbCustom);
+            this.panel1.Controls.Add(this.rbTea);
+            this.panel1.Controls.Add(this.rbCoffee);
+            this.panel1.Controls.Add(this.rbWater);
             this.panel1.Controls.Add(this.cost);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.boolSugar);
@@ -200,8 +213,44 @@ namespace CoffeeMachine2._0
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(13, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 355);
+            this.panel1.Size = new System.Drawing.Size(375, 453);
             this.panel1.TabIndex = 3;
+            // 
+            // rbTea
+            // 
+            this.rbTea.AutoSize = true;
+            this.rbTea.Location = new System.Drawing.Point(141, 89);
+            this.rbTea.Name = "rbTea";
+            this.rbTea.Size = new System.Drawing.Size(45, 17);
+            this.rbTea.TabIndex = 25;
+            this.rbTea.TabStop = true;
+            this.rbTea.Text = "Чай";
+            this.rbTea.UseVisualStyleBackColor = true;
+            this.rbTea.CheckedChanged += new System.EventHandler(this.rbTea_CheckedChanged);
+            // 
+            // rbCoffee
+            // 
+            this.rbCoffee.AutoSize = true;
+            this.rbCoffee.Location = new System.Drawing.Point(23, 123);
+            this.rbCoffee.Name = "rbCoffee";
+            this.rbCoffee.Size = new System.Drawing.Size(52, 17);
+            this.rbCoffee.TabIndex = 24;
+            this.rbCoffee.TabStop = true;
+            this.rbCoffee.Text = "Кофе";
+            this.rbCoffee.UseVisualStyleBackColor = true;
+            this.rbCoffee.CheckedChanged += new System.EventHandler(this.rbCoffee_CheckedChanged);
+            // 
+            // rbWater
+            // 
+            this.rbWater.AutoSize = true;
+            this.rbWater.Location = new System.Drawing.Point(23, 89);
+            this.rbWater.Name = "rbWater";
+            this.rbWater.Size = new System.Drawing.Size(50, 17);
+            this.rbWater.TabIndex = 23;
+            this.rbWater.TabStop = true;
+            this.rbWater.Text = "Вода";
+            this.rbWater.UseVisualStyleBackColor = true;
+            this.rbWater.CheckedChanged += new System.EventHandler(this.rbWater_CheckedChanged);
             // 
             // cost
             // 
@@ -225,9 +274,9 @@ namespace CoffeeMachine2._0
             this.pictureBox1.ErrorImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
             this.pictureBox1.Image = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
             this.pictureBox1.InitialImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 227);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 358);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 97);
+            this.pictureBox1.Size = new System.Drawing.Size(85, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -235,7 +284,7 @@ namespace CoffeeMachine2._0
             // boolSugar
             // 
             this.boolSugar.AutoSize = true;
-            this.boolSugar.Location = new System.Drawing.Point(126, 142);
+            this.boolSugar.Location = new System.Drawing.Point(126, 216);
             this.boolSugar.Name = "boolSugar";
             this.boolSugar.Size = new System.Drawing.Size(15, 14);
             this.boolSugar.TabIndex = 20;
@@ -244,7 +293,7 @@ namespace CoffeeMachine2._0
             // boolTemperature
             // 
             this.boolTemperature.AutoSize = true;
-            this.boolTemperature.Location = new System.Drawing.Point(126, 95);
+            this.boolTemperature.Location = new System.Drawing.Point(126, 169);
             this.boolTemperature.Name = "boolTemperature";
             this.boolTemperature.Size = new System.Drawing.Size(15, 14);
             this.boolTemperature.TabIndex = 19;
@@ -252,7 +301,7 @@ namespace CoffeeMachine2._0
             // 
             // SaveEdit
             // 
-            this.SaveEdit.Location = new System.Drawing.Point(113, 400);
+            this.SaveEdit.Location = new System.Drawing.Point(116, 498);
             this.SaveEdit.Name = "SaveEdit";
             this.SaveEdit.Size = new System.Drawing.Size(177, 23);
             this.SaveEdit.TabIndex = 6;
@@ -261,11 +310,43 @@ namespace CoffeeMachine2._0
             this.SaveEdit.Visible = false;
             this.SaveEdit.Click += new System.EventHandler(this.SaveEdit_Click);
             // 
+            // rbCustom
+            // 
+            this.rbCustom.AutoSize = true;
+            this.rbCustom.Location = new System.Drawing.Point(141, 123);
+            this.rbCustom.Name = "rbCustom";
+            this.rbCustom.Size = new System.Drawing.Size(94, 17);
+            this.rbCustom.TabIndex = 26;
+            this.rbCustom.TabStop = true;
+            this.rbCustom.Text = "Свой напиток";
+            this.rbCustom.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(16, 298);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 41);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Сколько секунд будет готовиться ваш напиток?";
+            // 
+            // TimeToCook
+            // 
+            this.TimeToCook.Location = new System.Drawing.Point(127, 304);
+            this.TimeToCook.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.TimeToCook.Name = "TimeToCook";
+            this.TimeToCook.Size = new System.Drawing.Size(120, 20);
+            this.TimeToCook.TabIndex = 28;
+            this.TimeToCook.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeToCook_KeyUp);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 533);
             this.Controls.Add(this.SaveEdit);
             this.Controls.Add(this.AddDrink);
             this.Controls.Add(this.label1);
@@ -281,6 +362,7 @@ namespace CoffeeMachine2._0
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +390,11 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown cost;
         private System.Windows.Forms.Button SaveEdit;
+        private System.Windows.Forms.RadioButton rbTea;
+        private System.Windows.Forms.RadioButton rbCoffee;
+        private System.Windows.Forms.RadioButton rbWater;
+        private System.Windows.Forms.RadioButton rbCustom;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown TimeToCook;
     }
 }
