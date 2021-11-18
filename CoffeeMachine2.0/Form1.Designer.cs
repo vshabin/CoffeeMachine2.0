@@ -215,6 +215,7 @@ namespace CoffeeMachine2._0
             this.drinkButton5.Name = "drinkButton5";
             this.drinkButton5.Size = new System.Drawing.Size(232, 63);
             this.drinkButton5.TabIndex = 22;
+            this.drinkButton5.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
             // drinkButton6
             // 
@@ -223,6 +224,7 @@ namespace CoffeeMachine2._0
             this.drinkButton6.Name = "drinkButton6";
             this.drinkButton6.Size = new System.Drawing.Size(232, 63);
             this.drinkButton6.TabIndex = 21;
+            this.drinkButton6.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
             // drinkButton7
             // 
@@ -231,6 +233,7 @@ namespace CoffeeMachine2._0
             this.drinkButton7.Name = "drinkButton7";
             this.drinkButton7.Size = new System.Drawing.Size(232, 63);
             this.drinkButton7.TabIndex = 20;
+            this.drinkButton7.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
             // drinkButton8
             // 
@@ -239,6 +242,7 @@ namespace CoffeeMachine2._0
             this.drinkButton8.Name = "drinkButton8";
             this.drinkButton8.Size = new System.Drawing.Size(232, 63);
             this.drinkButton8.TabIndex = 19;
+            this.drinkButton8.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
             // drinkButton4
             // 
@@ -247,6 +251,7 @@ namespace CoffeeMachine2._0
             this.drinkButton4.Name = "drinkButton4";
             this.drinkButton4.Size = new System.Drawing.Size(232, 63);
             this.drinkButton4.TabIndex = 18;
+            this.drinkButton4.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
             // drinkButton3
             // 

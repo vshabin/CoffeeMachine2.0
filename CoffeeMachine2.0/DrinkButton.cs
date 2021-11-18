@@ -44,6 +44,7 @@ namespace CoffeeMachine2._0
 
         public void EmptyButton()
         {
+            selected = false;
             BackColor = defaultColor;
         }
     }

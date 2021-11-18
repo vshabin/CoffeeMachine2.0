@@ -13,21 +13,9 @@ namespace CoffeeMachine2._0
         public int change = 0;
         public string cookingStage = "Ожидаю заказ...";
 
-        public Drink selectedDrink = new Drink();
+        public static Drink selectedDrink;
 
         public static List<Drink> drinks = new List<Drink>();
-
-        public void SetDefaultDrinks()
-        {
-            drinks.Add(new Tea("Чёрный чай", null, 25, false, false, 7000));
-            drinks.Add(new Tea("Зелёный чай", null, 25, false, false, 7000));
-            drinks.Add(new Coffee("Латте", null, 35, false, false, 3, 10000));
-            drinks.Add(new Coffee("Американо", null, 30, false, false, 10000));
-            drinks.Add(new Water("Вода", null, 5, false, 2000));
-            drinks.Add(new Drink("Молочный коктейль", null, 50, false, false, 0, 15000));
-            drinks.Add(new Drink("Горячий шоколад", null, 25, false, false, 0, 11000));
-            drinks.Add(new Coffee("Эспрессо", null, 25, false, false, 10000));
-        }
 
         public async void Cook()//готовка напитка
         {
@@ -53,11 +41,6 @@ namespace CoffeeMachine2._0
         public void SetBalance(int balance)//добавление внесённой суммы к балансу
         {
             this.balance += balance;
-        }
-
-        public void SetDrink()//занесение выбранного напитка
-        {
-
         }
     }
 }
