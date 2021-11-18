@@ -17,8 +17,24 @@ namespace CoffeeMachine2._0
         public Form1()
         {
             InitializeComponent();
+            cf.SetDefaultDrinks();
         }
 
+
+
+        void SetSettingsForDrinkButtons()
+        {
+            int i = 0;
+            foreach (Control c in this.Controls)
+            {
+                if (c is DrinkButton)
+                {
+                    (c as DrinkButton).thisDrink = CoffeeMachine.drinks[i];
+                    (c as DrinkButton).setDrink();
+                    i++;
+                }
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -81,6 +97,27 @@ namespace CoffeeMachine2._0
         {
             Form ap = new AdminPanel();
             ap.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            SetSettingsForDrinkButtons();
+        }
+
+        private void drinkButton1_Click(object sender, EventArgs e)
+        {
+
+            foreach (Control c in this.Controls)
+            {
+                if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
+                {
+                    (sender as DrinkButton).EmptyButton();
+                }
+                else
+                {
+                    (sender as DrinkButton).SetSelectedButton();
+                }
+            }
         }
     }
 }

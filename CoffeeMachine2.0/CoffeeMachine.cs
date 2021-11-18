@@ -19,7 +19,14 @@ namespace CoffeeMachine2._0
 
         public void SetDefaultDrinks()
         {
-            drinks.Add(new Drink("Капучино", null, 15, true, true, 5, 10000));
+            drinks.Add(new Tea("Чёрный чай", null, 25, false, false, 7000));
+            drinks.Add(new Tea("Зелёный чай", null, 25, false, false, 7000));
+            drinks.Add(new Coffee("Латте", null, 35, false, false, 3, 10000));
+            drinks.Add(new Coffee("Американо", null, 30, false, false, 10000));
+            drinks.Add(new Water("Вода", null, 5, false, 2000));
+            drinks.Add(new Drink("Молочный коктейль", null, 50, false, false, 0, 15000));
+            drinks.Add(new Drink("Горячий шоколад", null, 25, false, false, 0, 11000));
+            drinks.Add(new Coffee("Эспрессо", null, 25, false, false, 10000));
         }
 
         public async void Cook()//готовка напитка
