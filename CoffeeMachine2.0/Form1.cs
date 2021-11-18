@@ -27,6 +27,19 @@ namespace CoffeeMachine2._0
                 }
         }
 
+        void SetSettingsForDrinkButtons()
+        {
+            int i = 0;
+            foreach (Control c in this.Controls)
+            {
+                if (c is DrinkButton)
+                {
+                    (c as DrinkButton).thisDrink = CoffeeMachine.drinks[i];
+                    (c as DrinkButton).setDrink();
+                    i++;
+                }
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -38,7 +51,7 @@ namespace CoffeeMachine2._0
             timer1.Interval = 1;
             timer1.Start();
             cf.Cook();
-            await Task.Delay(cf.selectedDrink.cookingTime + 1000);
+            await Task.Delay(CoffeeMachine.selectedDrink.cookingTime + 1000);
             timer1.Stop();
         }
 
@@ -89,6 +102,32 @@ namespace CoffeeMachine2._0
         {
             Form ap = new AdminPanel();
             ap.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            SetSettingsForDrinkButtons();
+        }
+
+        private void drinkButton1_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
+                {
+                    (c as DrinkButton).EmptyButton();
+                }
+                else
+                {
+                    (sender as DrinkButton).SetSelectedButton();
+                }
+            }
+
+            labelDrink.Text = "Напиток: " + (sender as DrinkButton).thisDrink.name;
+
+            labelAmount.Text = "Сумма к оплате: " + (sender as DrinkButton).thisDrink.cost;
+
+            CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
         }
     }
 }

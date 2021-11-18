@@ -16,7 +16,7 @@ namespace CoffeeMachine2._0
             int ucost = 10,
             bool utemperature = false,
             bool usugar = false,
-            int uuserStrenght = 0,
+            int uuserStrenght = 3,
             int uCookingTime = 5000)
         {
             name = uname;

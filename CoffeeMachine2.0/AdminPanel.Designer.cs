@@ -221,7 +221,7 @@ namespace CoffeeMachine2._0
             // 
             this.TimeToCook.Location = new System.Drawing.Point(127, 304);
             this.TimeToCook.Maximum = new decimal(new int[] {
-            300,
+            1000000,
             0,
             0,
             0});

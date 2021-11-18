@@ -12,32 +12,40 @@ namespace CoffeeMachine2._0
 {
     public partial class DrinkButton : UserControl
     {
-        Color chooseColor = Color.Black;
-        bool selected = false;
+        Color selectedColor = Color.FromArgb(213, 146, 26);
+        Color defaultColor = Color.FromArgb(241, 216, 129);
+        public bool selected = false;
+        public Drink thisDrink;
 
         public DrinkButton()
         {
+            BackColor = defaultColor;
             InitializeComponent();
         }
 
-        public bool Selected
+        public void setDrink()
         {
-            set
-            {
-                selected = value;
-                Refresh();
-            }
-            get { return selected; }
+            labelInfoAboutDrinkDB.Text = thisDrink.name + " : " + thisDrink.cost + " рублей";
+            pbDrinkButton.Image = thisDrink.picture;
         }
 
-        public Color ChooseColor
+        public void SetSelectedButton()
         {
-            set 
-            {
-                chooseColor = value;
-                Refresh();
-            }
-            get { return chooseColor; }
+            if (selected)
+                selected = false;
+            else
+                selected = true;
+
+            if (selected)
+                BackColor = selectedColor;
+            else
+                BackColor = defaultColor;
+        }
+
+        public void EmptyButton()
+        {
+            selected = false;
+            BackColor = defaultColor;
         }
     }
 }
