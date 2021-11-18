@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDrink xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Drink xsi:type="Tea">
+    <name>Чай с лимоном</name>
+    <picturepath>../../Resources/DefaultIcon.png</picturepath>
+    <cost>15</cost>
+    <temperature>true</temperature>
+    <sugar>true</sugar>
+    <userStrenght>0</userStrenght>
+    <cookingTime>5000</cookingTime>
+  </Drink>
+</ArrayOfDrink>

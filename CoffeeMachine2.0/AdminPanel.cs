@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
-//имя
 namespace CoffeeMachine2._0
 {
     public partial class AdminPanel : Form
     {
-        Image tempImage= (Image)Properties.Resources.DefaultIcon;
+        string xmlpath = "../../Menu.xml";
+        string tempImage= "../../Resources/DefaultIcon.png";
+        bool saved = true;
 
         public AdminPanel()
         {
@@ -30,8 +33,8 @@ namespace CoffeeMachine2._0
             res.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
             if (res.ShowDialog() == DialogResult.OK)
             {
-                tempImage= Image.FromFile(res.FileName);
-                pictureBox1.Image = tempImage;
+                tempImage= res.FileName;
+                pictureBox1.Image = Image.FromFile(tempImage);
             }
         }
         private void AdminPanel_Load(object sender, EventArgs e)
@@ -86,9 +89,9 @@ namespace CoffeeMachine2._0
             }
             CoffeeMachine.drinks.Add(newDrink);
             ListOfDrinks.Items.Add(newDrink.name);
-            tempImage = (Image)Properties.Resources.DefaultIcon;
-            pictureBox1.Image = tempImage;
-
+            tempImage = "../../Resources/DefaultIcon.png";
+            pictureBox1.Image = Image.FromFile(tempImage);
+            saved = false;
         }
 
         private void DeleteDrink_Click(object sender, EventArgs e)
@@ -96,6 +99,7 @@ namespace CoffeeMachine2._0
             if (ListOfDrinks.SelectedItems.Count == 0) return;
             CoffeeMachine.drinks.RemoveAt(ListOfDrinks.SelectedIndex);
             ListOfDrinks.Items.RemoveAt(ListOfDrinks.SelectedIndex);
+            saved = false;
         }
 
         private void EditDrink_Click(object sender, EventArgs e)
@@ -105,9 +109,10 @@ namespace CoffeeMachine2._0
             SaveEdit.Visible = true;
             Drink DrinkToEdit = CoffeeMachine.drinks[ListOfDrinks.SelectedIndex];
             name.Text = DrinkToEdit.name;
-            tempImage = DrinkToEdit.picture;
-            pictureBox1.Image = tempImage;
+            tempImage = DrinkToEdit.picturepath;
+            pictureBox1.Image = Image.FromFile(tempImage);
             cost.Value= DrinkToEdit.cost;
+
             if (DrinkToEdit.GetType() == typeof(Water))
             {
                 rbWater.Checked = true;
@@ -135,8 +140,6 @@ namespace CoffeeMachine2._0
             tbStrenght.Value = DrinkToEdit.userStrenght;
             TimeToCook.Value = DrinkToEdit.cookingTime / 1000;
             rbCustom.Checked = true;
-            return;
-            
         }
 
         private void SaveEdit_Click(object sender, EventArgs e)
@@ -144,19 +147,20 @@ namespace CoffeeMachine2._0
             SaveEdit.Visible = false;
             AddDrink.Visible = true;
             CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].name = name.Text;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].picture = tempImage;
+            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].picturepath = tempImage;
             CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].cost = (int)cost.Value;
             CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].temperature = boolTemperature.Checked;
             CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].sugar = boolSugar.Checked;
             CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].userStrenght = tbStrenght.Value;
             ListOfDrinks.Items[ListOfDrinks.SelectedIndex] = name.Text;
             name.Text = "";
-            tempImage = (Image)Properties.Resources.DefaultIcon;
-            pictureBox1.Image = tempImage;
+            tempImage = "../../Resources/DefaultIcon.png";
+            pictureBox1.Image = Image.FromFile(tempImage);
             cost.Value = 0;
             boolTemperature.Checked = false;
             boolSugar.Checked = false;
             tbStrenght.Value = 0;
+            saved = false;
         }
 
         private void rbWater_CheckedChanged(object sender, EventArgs e)
@@ -169,7 +173,6 @@ namespace CoffeeMachine2._0
                 label6.Visible = false;
                 label9.Visible = false;
                 label7.Visible = false;
-                
             }
             else
             {
@@ -212,6 +215,46 @@ namespace CoffeeMachine2._0
                 TimeToCook.Visible = true;
                 label7.Visible = true;
             }
+        }
+
+        private void bSaveToMenu_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(xmlpath, String.Empty);
+            XmlSerializer serialiser = new XmlSerializer(typeof(List<Drink>));
+            TextWriter FileStream = new StreamWriter(xmlpath);
+            serialiser.Serialize(FileStream, CoffeeMachine.drinks);
+            FileStream.Close();
+            saved = true;
+        }
+
+        private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!saved)
+            {
+                DialogResult dialog = MessageBox.Show(
+                "Сохранить программу и выйти?",
+                "Сохранение меню",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Warning
+               );
+                if (dialog == DialogResult.Yes)
+                {
+                    File.WriteAllText(xmlpath, String.Empty);
+                    XmlSerializer serialiser = new XmlSerializer(typeof(List<Drink>));
+                    TextWriter FileStream = new StreamWriter(xmlpath);
+                    serialiser.Serialize(FileStream, CoffeeMachine.drinks);
+                    FileStream.Close();
+                }
+                if (dialog == DialogResult.No)
+                {
+                    e.Cancel = false;
+                }
+                if (dialog == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+            
         }
     }
 }

@@ -45,6 +45,9 @@ namespace CoffeeMachine2._0
             this.label9 = new System.Windows.Forms.Label();
             this.tbStrenght = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TimeToCook = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbCustom = new System.Windows.Forms.RadioButton();
             this.rbTea = new System.Windows.Forms.RadioButton();
             this.rbCoffee = new System.Windows.Forms.RadioButton();
             this.rbWater = new System.Windows.Forms.RadioButton();
@@ -53,14 +56,12 @@ namespace CoffeeMachine2._0
             this.boolSugar = new System.Windows.Forms.CheckBox();
             this.boolTemperature = new System.Windows.Forms.CheckBox();
             this.SaveEdit = new System.Windows.Forms.Button();
-            this.rbCustom = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TimeToCook = new System.Windows.Forms.NumericUpDown();
+            this.bSaveToMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).BeginInit();
             this.SuspendLayout();
             // 
             // ListOfDrinks
@@ -216,6 +217,38 @@ namespace CoffeeMachine2._0
             this.panel1.Size = new System.Drawing.Size(375, 453);
             this.panel1.TabIndex = 3;
             // 
+            // TimeToCook
+            // 
+            this.TimeToCook.Location = new System.Drawing.Point(127, 304);
+            this.TimeToCook.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.TimeToCook.Name = "TimeToCook";
+            this.TimeToCook.Size = new System.Drawing.Size(120, 20);
+            this.TimeToCook.TabIndex = 28;
+            this.TimeToCook.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeToCook_KeyUp);
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(16, 298);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 41);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Сколько секунд будет готовиться ваш напиток?";
+            // 
+            // rbCustom
+            // 
+            this.rbCustom.AutoSize = true;
+            this.rbCustom.Location = new System.Drawing.Point(141, 123);
+            this.rbCustom.Name = "rbCustom";
+            this.rbCustom.Size = new System.Drawing.Size(94, 17);
+            this.rbCustom.TabIndex = 26;
+            this.rbCustom.TabStop = true;
+            this.rbCustom.Text = "Свой напиток";
+            this.rbCustom.UseVisualStyleBackColor = true;
+            // 
             // rbTea
             // 
             this.rbTea.AutoSize = true;
@@ -310,43 +343,22 @@ namespace CoffeeMachine2._0
             this.SaveEdit.Visible = false;
             this.SaveEdit.Click += new System.EventHandler(this.SaveEdit_Click);
             // 
-            // rbCustom
+            // bSaveToMenu
             // 
-            this.rbCustom.AutoSize = true;
-            this.rbCustom.Location = new System.Drawing.Point(141, 123);
-            this.rbCustom.Name = "rbCustom";
-            this.rbCustom.Size = new System.Drawing.Size(94, 17);
-            this.rbCustom.TabIndex = 26;
-            this.rbCustom.TabStop = true;
-            this.rbCustom.Text = "Свой напиток";
-            this.rbCustom.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(16, 298);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 41);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Сколько секунд будет готовиться ваш напиток?";
-            // 
-            // TimeToCook
-            // 
-            this.TimeToCook.Location = new System.Drawing.Point(127, 304);
-            this.TimeToCook.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.TimeToCook.Name = "TimeToCook";
-            this.TimeToCook.Size = new System.Drawing.Size(120, 20);
-            this.TimeToCook.TabIndex = 28;
-            this.TimeToCook.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeToCook_KeyUp);
+            this.bSaveToMenu.Location = new System.Drawing.Point(321, 498);
+            this.bSaveToMenu.Name = "bSaveToMenu";
+            this.bSaveToMenu.Size = new System.Drawing.Size(168, 23);
+            this.bSaveToMenu.TabIndex = 7;
+            this.bSaveToMenu.Text = "Сохранить изменения в меню";
+            this.bSaveToMenu.UseVisualStyleBackColor = true;
+            this.bSaveToMenu.Click += new System.EventHandler(this.bSaveToMenu_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 533);
+            this.Controls.Add(this.bSaveToMenu);
             this.Controls.Add(this.SaveEdit);
             this.Controls.Add(this.AddDrink);
             this.Controls.Add(this.label1);
@@ -356,13 +368,14 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.ListOfDrinks);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -396,5 +409,6 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.RadioButton rbCustom;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown TimeToCook;
+        private System.Windows.Forms.Button bSaveToMenu;
     }
 }

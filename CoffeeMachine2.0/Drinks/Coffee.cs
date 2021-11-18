@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine2._0
 {
-    class Coffee : Drink
+    public class Coffee : Drink
     {
-
+        public Coffee() { }
         public Coffee(string uname = "Без названия",
-            Image upicture = null,
+            string upicture = "../Resources/my_image.png",
             int ucost = 10,
             bool utemperature = false,
             bool usugar = false,
@@ -20,16 +20,12 @@ namespace CoffeeMachine2._0
             int uCookingTime = 5000)
         {
             name = uname;
-            picture = upicture;
+            picturepath = upicture;
             cost = ucost;
             temperature = utemperature;
             sugar = usugar;
             userStrenght = uuserStrenght;
             cookingTime = uCookingTime;
-            if (picture == null)
-            {
-                picture = (Image)Properties.Resources.DefaultIcon;
-            }
 
         }
     }

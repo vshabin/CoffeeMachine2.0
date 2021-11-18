@@ -8,24 +8,20 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine2._0
 {
-    class Water:Drink
+    public class Water:Drink
     {
-
+        public Water() { }
         public Water(string uname = "Без названия",
-            Image upicture = null,
+             string upicture = "../Resources/my_image.png",
             int ucost = 10,
             bool utemperature = false,
             int uCookingTime = 5000)
         {
             name = uname;
-            picture = upicture;
+            picturepath = upicture;
             cost = ucost;
             temperature = utemperature;
             cookingTime = uCookingTime;
-            if (picture == null)
-            {
-                picture = (Image)Properties.Resources.DefaultIcon;
-            }
 
         }
     }

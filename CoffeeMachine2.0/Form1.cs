@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace CoffeeMachine2._0
 {
     public partial class Form1 : Form
     {
+        string xmlpath = "../../Menu.xml";
         CoffeeMachine cf = new CoffeeMachine();
         private string userBalance = "Внесено: ";
         public Form1()
         {
             InitializeComponent();
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Drink>));
+                using (FileStream stream = new FileStream(xmlpath, FileMode.Open))
+                {
+                    CoffeeMachine.drinks = (List<Drink>)serializer.Deserialize(stream);
+                }
         }
 
 
