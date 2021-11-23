@@ -211,7 +211,7 @@ namespace CoffeeMachine2._0
             // drinkButton5
             // 
             this.drinkButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton5.Location = new System.Drawing.Point(259, 611);
+            this.drinkButton5.Location = new System.Drawing.Point(16, 618);
             this.drinkButton5.Name = "drinkButton5";
             this.drinkButton5.Size = new System.Drawing.Size(232, 63);
             this.drinkButton5.TabIndex = 22;
@@ -220,7 +220,7 @@ namespace CoffeeMachine2._0
             // drinkButton6
             // 
             this.drinkButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton6.Location = new System.Drawing.Point(259, 542);
+            this.drinkButton6.Location = new System.Drawing.Point(16, 549);
             this.drinkButton6.Name = "drinkButton6";
             this.drinkButton6.Size = new System.Drawing.Size(232, 63);
             this.drinkButton6.TabIndex = 21;
@@ -229,7 +229,7 @@ namespace CoffeeMachine2._0
             // drinkButton7
             // 
             this.drinkButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton7.Location = new System.Drawing.Point(259, 473);
+            this.drinkButton7.Location = new System.Drawing.Point(16, 480);
             this.drinkButton7.Name = "drinkButton7";
             this.drinkButton7.Size = new System.Drawing.Size(232, 63);
             this.drinkButton7.TabIndex = 20;
@@ -238,7 +238,7 @@ namespace CoffeeMachine2._0
             // drinkButton8
             // 
             this.drinkButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton8.Location = new System.Drawing.Point(259, 404);
+            this.drinkButton8.Location = new System.Drawing.Point(16, 411);
             this.drinkButton8.Name = "drinkButton8";
             this.drinkButton8.Size = new System.Drawing.Size(232, 63);
             this.drinkButton8.TabIndex = 19;
@@ -247,7 +247,7 @@ namespace CoffeeMachine2._0
             // drinkButton4
             // 
             this.drinkButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton4.Location = new System.Drawing.Point(12, 611);
+            this.drinkButton4.Location = new System.Drawing.Point(278, 480);
             this.drinkButton4.Name = "drinkButton4";
             this.drinkButton4.Size = new System.Drawing.Size(232, 63);
             this.drinkButton4.TabIndex = 18;
@@ -256,7 +256,7 @@ namespace CoffeeMachine2._0
             // drinkButton3
             // 
             this.drinkButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton3.Location = new System.Drawing.Point(12, 542);
+            this.drinkButton3.Location = new System.Drawing.Point(278, 411);
             this.drinkButton3.Name = "drinkButton3";
             this.drinkButton3.Size = new System.Drawing.Size(232, 63);
             this.drinkButton3.TabIndex = 17;
@@ -265,7 +265,7 @@ namespace CoffeeMachine2._0
             // drinkButton2
             // 
             this.drinkButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton2.Location = new System.Drawing.Point(12, 473);
+            this.drinkButton2.Location = new System.Drawing.Point(278, 549);
             this.drinkButton2.Name = "drinkButton2";
             this.drinkButton2.Size = new System.Drawing.Size(232, 63);
             this.drinkButton2.TabIndex = 16;
@@ -274,7 +274,7 @@ namespace CoffeeMachine2._0
             // drinkButton1
             // 
             this.drinkButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(216)))), ((int)(((byte)(129)))));
-            this.drinkButton1.Location = new System.Drawing.Point(12, 404);
+            this.drinkButton1.Location = new System.Drawing.Point(278, 618);
             this.drinkButton1.Name = "drinkButton1";
             this.drinkButton1.Size = new System.Drawing.Size(232, 63);
             this.drinkButton1.TabIndex = 15;
@@ -284,7 +284,7 @@ namespace CoffeeMachine2._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 749);
+            this.ClientSize = new System.Drawing.Size(643, 742);
             this.Controls.Add(this.drinkButton5);
             this.Controls.Add(this.drinkButton6);
             this.Controls.Add(this.drinkButton7);
@@ -306,6 +306,7 @@ namespace CoffeeMachine2._0
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).EndInit();
             this.panel1.ResumeLayout(false);

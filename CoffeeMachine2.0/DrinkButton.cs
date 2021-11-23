@@ -25,8 +25,11 @@ namespace CoffeeMachine2._0
 
         public void setDrink()
         {
-            labelInfoAboutDrinkDB.Text = thisDrink.name + " : " + thisDrink.cost + " рублей";
-            pbDrinkButton.Image = thisDrink.picture;
+            
+            
+                labelInfoAboutDrinkDB.Text = thisDrink.name + " : " + thisDrink.cost + " рублей";
+                pbDrinkButton.Image = Image.FromFile(thisDrink.picturepath);
+            
         }
 
         public void SetSelectedButton()

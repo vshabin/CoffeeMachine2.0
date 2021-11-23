@@ -48,6 +48,7 @@ namespace CoffeeMachine2._0
             this.pbDrinkButton.Location = new System.Drawing.Point(155, 0);
             this.pbDrinkButton.Name = "pbDrinkButton";
             this.pbDrinkButton.Size = new System.Drawing.Size(74, 60);
+            this.pbDrinkButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDrinkButton.TabIndex = 1;
             this.pbDrinkButton.TabStop = false;
             // 

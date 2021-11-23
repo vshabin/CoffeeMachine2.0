@@ -118,5 +118,29 @@
   <ItemGroup>
     <None Include="Resources\DefaultIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\latte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\espresso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limon tea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cappuccino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green tea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black tea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\americano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

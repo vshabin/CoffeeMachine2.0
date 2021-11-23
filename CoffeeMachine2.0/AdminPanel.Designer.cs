@@ -369,7 +369,6 @@ namespace CoffeeMachine2._0
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
-            this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

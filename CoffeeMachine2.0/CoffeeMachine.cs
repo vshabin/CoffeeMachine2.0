@@ -8,7 +8,6 @@ namespace CoffeeMachine2._0
 {
     class CoffeeMachine
     {
-        string xmlpath = "Menu.xml";
         public int balance = 0;
         public int change = 0;
         public string cookingStage = "Ожидаю заказ...";
@@ -19,15 +18,22 @@ namespace CoffeeMachine2._0
 
         public async void Cook()//готовка напитка
         {
-            /* Добавить текст с теми параметрами, которые выбрал пользователь в строку ниже */
-            cookingStage = "Готовлю ваш заказ...";
-            await Task.Delay(selectedDrink.cookingTime);
-            CountChange();
-            cookingStage = string.Format("Ваш заказ готов! Всего доброго! Ваши {0} рублей.", change);
+            if (balance >= selectedDrink.cost)
+            {
+                /* Добавить текст с теми параметрами, которые выбрал пользователь в строку ниже */
+                cookingStage = "Готовлю ваш заказ...";
+                await Task.Delay(selectedDrink.cookingTime);
+                CountChange();
+                cookingStage = string.Format("Ваш заказ готов! Всего доброго! Ваши {0} рублей.", change);
+                balance = 0;
+            }
+            else
+                cookingStage = "У вас недостаточно денег!";
         }
 
         private void CountChange()//рассчитать сдачу
         {
+            if(balance > selectedDrink.cost)
             change = balance - selectedDrink.cost;
         }
 

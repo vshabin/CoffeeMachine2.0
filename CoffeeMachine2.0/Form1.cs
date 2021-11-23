@@ -27,16 +27,24 @@ namespace CoffeeMachine2._0
                 }
         }
 
-        void SetSettingsForDrinkButtons()
+        public void SetSettingsForDrinkButtons()
         {
             int i = 0;
             foreach (Control c in this.Controls)
             {
                 if (c is DrinkButton)
                 {
-                    (c as DrinkButton).thisDrink = CoffeeMachine.drinks[i];
-                    (c as DrinkButton).setDrink();
-                    i++;
+                    if (i <= CoffeeMachine.drinks.Count - 1)
+                    {
+                        (c as DrinkButton).Visible = true;
+                        (c as DrinkButton).thisDrink = CoffeeMachine.drinks[i];
+                        (c as DrinkButton).setDrink();
+                        i++;
+                    }
+                    else
+                    {
+                        (c as DrinkButton).Visible = false;
+                    }
                 }
             }
         }
@@ -128,6 +136,11 @@ namespace CoffeeMachine2._0
             labelAmount.Text = "Сумма к оплате: " + (sender as DrinkButton).thisDrink.cost;
 
             CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            SetSettingsForDrinkButtons();
         }
     }
 }

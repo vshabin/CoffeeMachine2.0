@@ -2,11 +2,74 @@
 <ArrayOfDrink xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Drink xsi:type="Tea">
     <name>Чай с лимоном</name>
-    <picturepath>../../Resources/DefaultIcon.png</picturepath>
+    <picturepath>D:\Users\student\Desktop\limon tea.png</picturepath>
+    <cost>14</cost>
+    <temperature>true</temperature>
+    <sugar>true</sugar>
+    <userStrenght>0</userStrenght>
+    <cookingTime>5000</cookingTime>
+  </Drink>
+  <Drink xsi:type="Coffee">
+    <name>Капучино</name>
+    <picturepath>D:\Users\student\Desktop\cappuccino.png</picturepath>
+    <cost>25</cost>
+    <temperature>false</temperature>
+    <sugar>true</sugar>
+    <userStrenght>2</userStrenght>
+    <cookingTime>5000</cookingTime>
+  </Drink>
+  <Drink xsi:type="Coffee">
+    <name>Американо</name>
+    <picturepath>D:\Users\student\Desktop\americano.png</picturepath>
+    <cost>35</cost>
+    <temperature>true</temperature>
+    <sugar>true</sugar>
+    <userStrenght>0</userStrenght>
+    <cookingTime>5000</cookingTime>
+  </Drink>
+  <Drink xsi:type="Coffee">
+    <name>Эспрессо</name>
+    <picturepath>D:\Users\student\Desktop\espresso.png</picturepath>
+    <cost>40</cost>
+    <temperature>true</temperature>
+    <sugar>true</sugar>
+    <userStrenght>2</userStrenght>
+    <cookingTime>5000</cookingTime>
+  </Drink>
+  <Drink xsi:type="Tea">
+    <name>Зелёный чай</name>
+    <picturepath>D:\Users\student\Desktop\green tea.png</picturepath>
     <cost>15</cost>
     <temperature>true</temperature>
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
     <cookingTime>5000</cookingTime>
+  </Drink>
+  <Drink xsi:type="Coffee">
+    <name>Латте</name>
+    <picturepath>D:\Users\student\Desktop\latte.png</picturepath>
+    <cost>35</cost>
+    <temperature>false</temperature>
+    <sugar>true</sugar>
+    <userStrenght>2</userStrenght>
+    <cookingTime>5000</cookingTime>
+  </Drink>
+  <Drink xsi:type="Water">
+    <name>Вода</name>
+    <picturepath>D:\Users\student\Desktop\water.png</picturepath>
+    <cost>10</cost>
+    <temperature>true</temperature>
+    <sugar>false</sugar>
+    <userStrenght>0</userStrenght>
+    <cookingTime>2000</cookingTime>
+  </Drink>
+  <Drink>
+    <name>Молочный коктейль</name>
+    <picturepath>D:\Users\student\Downloads\Безымянный.png</picturepath>
+    <cost>50</cost>
+    <temperature>false</temperature>
+    <sugar>false</sugar>
+    <userStrenght>0</userStrenght>
+    <cookingTime>20000</cookingTime>
   </Drink>
 </ArrayOfDrink>

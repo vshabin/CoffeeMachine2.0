@@ -124,7 +124,7 @@
   <data name="panelCoinOne.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAARNZJREFUeF7NfWeYHdWR9oZnd737fRvwOq+N0gRNHo1yAoHA4PXaXq93bZwBBxyw
+        vAAADrwBlbxySQAARNZJREFUeF7NfWeYHdWR9oZnd737fRvwOq+N0gRNHo1yAoHA4PXaXq93bZwBBxyw
         jY0twCaDyBIoZ41QAuWEAkJCWZqcFCbnpMk5KtT3vnXO6el75wrbn/1j+3nq6Zl77u0+p96qt6pOn+7+
         CwmxlRQXS1ZmpuRkZ0t6Wpp0dXbaFrMVFxUFtHd3ddkWsxUVFga093R32xazFRYUBLT39fbaFrPlF1ZI
         Rk6xZOZWSPrx96Tl/G5pyl0j7ecekqZz35bmAxOkaf9kadw3SRp2T5T67ROk9q0kqV6fKBVrEqRseawU
@@ -421,4 +421,7 @@
         ujb9sAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>68</value>
+  </metadata>
 </root>

@@ -37,10 +37,6 @@ namespace CoffeeMachine2._0
                 pictureBox1.Image = Image.FromFile(tempImage);
             }
         }
-        private void AdminPanel_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void cost_KeyUp(object sender, KeyEventArgs e)
         {
