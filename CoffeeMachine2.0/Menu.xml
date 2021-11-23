@@ -57,7 +57,7 @@
   <Drink xsi:type="Water">
     <name>Вода</name>
     <picturepath>..\..\Resources\water.png</picturepath>
-    <cost>10</cost>
+    <cost>15</cost>
     <temperature>true</temperature>
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>

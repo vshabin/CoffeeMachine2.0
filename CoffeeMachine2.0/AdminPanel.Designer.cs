@@ -56,7 +56,7 @@ namespace CoffeeMachine2._0
             this.boolSugar = new System.Windows.Forms.CheckBox();
             this.boolTemperature = new System.Windows.Forms.CheckBox();
             this.SaveEdit = new System.Windows.Forms.Button();
-            this.bSaveToMenu = new System.Windows.Forms.Button();
+            this.lNotice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).BeginInit();
@@ -74,7 +74,7 @@ namespace CoffeeMachine2._0
             // 
             // EditDrink
             // 
-            this.EditDrink.Location = new System.Drawing.Point(495, 498);
+            this.EditDrink.Location = new System.Drawing.Point(495, 503);
             this.EditDrink.Name = "EditDrink";
             this.EditDrink.Size = new System.Drawing.Size(121, 23);
             this.EditDrink.TabIndex = 1;
@@ -84,7 +84,7 @@ namespace CoffeeMachine2._0
             // 
             // DeleteDrink
             // 
-            this.DeleteDrink.Location = new System.Drawing.Point(640, 498);
+            this.DeleteDrink.Location = new System.Drawing.Point(639, 503);
             this.DeleteDrink.Name = "DeleteDrink";
             this.DeleteDrink.Size = new System.Drawing.Size(121, 23);
             this.DeleteDrink.TabIndex = 2;
@@ -343,22 +343,24 @@ namespace CoffeeMachine2._0
             this.SaveEdit.Visible = false;
             this.SaveEdit.Click += new System.EventHandler(this.SaveEdit_Click);
             // 
-            // bSaveToMenu
+            // lNotice
             // 
-            this.bSaveToMenu.Location = new System.Drawing.Point(321, 498);
-            this.bSaveToMenu.Name = "bSaveToMenu";
-            this.bSaveToMenu.Size = new System.Drawing.Size(168, 23);
-            this.bSaveToMenu.TabIndex = 7;
-            this.bSaveToMenu.Text = "Сохранить изменения в меню";
-            this.bSaveToMenu.UseVisualStyleBackColor = true;
-            this.bSaveToMenu.Click += new System.EventHandler(this.bSaveToMenu_Click);
+            this.lNotice.AutoSize = true;
+            this.lNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lNotice.ForeColor = System.Drawing.Color.Red;
+            this.lNotice.Location = new System.Drawing.Point(452, 475);
+            this.lNotice.Name = "lNotice";
+            this.lNotice.Size = new System.Drawing.Size(348, 25);
+            this.lNotice.TabIndex = 8;
+            this.lNotice.Text = "Вы достигли максимум напитков.";
+            this.lNotice.Visible = false;
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 533);
-            this.Controls.Add(this.bSaveToMenu);
+            this.Controls.Add(this.lNotice);
             this.Controls.Add(this.SaveEdit);
             this.Controls.Add(this.AddDrink);
             this.Controls.Add(this.label1);
@@ -368,7 +370,6 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.ListOfDrinks);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -376,6 +377,7 @@ namespace CoffeeMachine2._0
             ((System.ComponentModel.ISupportInitialize)(this.cost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -408,6 +410,6 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.RadioButton rbCustom;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown TimeToCook;
-        private System.Windows.Forms.Button bSaveToMenu;
+        private System.Windows.Forms.Label lNotice;
     }
 }

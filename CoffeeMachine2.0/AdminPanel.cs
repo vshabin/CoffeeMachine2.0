@@ -25,6 +25,10 @@ namespace CoffeeMachine2._0
             {
                 ListOfDrinks.Items.Add(drink.name);
             }
+            if (CoffeeMachine.drinks.Count == 8)
+            {
+                lNotice.Visible = true;
+            }
         }
 
         private void uploadImage_Click(object sender, EventArgs e)
@@ -49,6 +53,7 @@ namespace CoffeeMachine2._0
         private void AddDrink_Click(object sender, EventArgs e)
         {
             if (name.Text == "") return;
+            if (CoffeeMachine.drinks.Count == 8) return;
             Drink newDrink;
             if (rbWater.Checked)
             {
@@ -88,6 +93,12 @@ namespace CoffeeMachine2._0
             tempImage = "../../Resources/DefaultIcon.png";
             pictureBox1.Image = Image.FromFile(tempImage);
             saved = false;
+            if (CoffeeMachine.drinks.Count == 8)
+            {
+                lNotice.Visible = true;
+            }
+            else lNotice.Visible = false;
+            Save();
         }
 
         private void DeleteDrink_Click(object sender, EventArgs e)
@@ -96,6 +107,7 @@ namespace CoffeeMachine2._0
             CoffeeMachine.drinks.RemoveAt(ListOfDrinks.SelectedIndex);
             ListOfDrinks.Items.RemoveAt(ListOfDrinks.SelectedIndex);
             saved = false;
+            Save();
         }
 
         private void EditDrink_Click(object sender, EventArgs e)
@@ -140,23 +152,49 @@ namespace CoffeeMachine2._0
 
         private void SaveEdit_Click(object sender, EventArgs e)
         {
-            SaveEdit.Visible = false;
-            AddDrink.Visible = true;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].name = name.Text;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].picturepath = tempImage;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].cost = (int)cost.Value;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].temperature = boolTemperature.Checked;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].sugar = boolSugar.Checked;
-            CoffeeMachine.drinks[ListOfDrinks.SelectedIndex].userStrenght = tbStrenght.Value;
-            ListOfDrinks.Items[ListOfDrinks.SelectedIndex] = name.Text;
-            name.Text = "";
+            if (name.Text == "") return;
+            if (rbWater.Checked)
+            {
+                CoffeeMachine.drinks[ListOfDrinks.SelectedIndex] = new Water(name.Text,
+                tempImage,
+                (int)cost.Value,
+                boolTemperature.Checked);
+            }
+            else if (rbTea.Checked)
+            {
+                CoffeeMachine.drinks[ListOfDrinks.SelectedIndex] = new Tea(name.Text,
+                tempImage,
+                (int)cost.Value,
+                boolTemperature.Checked,
+                boolSugar.Checked);
+            }
+            else if (rbCoffee.Checked)
+            {
+                CoffeeMachine.drinks[ListOfDrinks.SelectedIndex] = new Coffee(name.Text,
+                tempImage,
+                (int)cost.Value,
+                boolTemperature.Checked,
+                boolSugar.Checked,
+                tbStrenght.Value);
+            }
+            else
+            {
+                 CoffeeMachine.drinks[ListOfDrinks.SelectedIndex] = new Drink(name.Text,
+                tempImage,
+                (int)cost.Value,
+                boolTemperature.Checked,
+                boolSugar.Checked,
+                tbStrenght.Value,
+                (int)TimeToCook.Value * 1000);
+            }
             tempImage = "../../Resources/DefaultIcon.png";
             pictureBox1.Image = Image.FromFile(tempImage);
-            cost.Value = 0;
-            boolTemperature.Checked = false;
-            boolSugar.Checked = false;
-            tbStrenght.Value = 0;
             saved = false;
+            rbCoffee.Checked = false;
+            rbWater.Checked = false;
+            rbTea.Checked = false;
+            rbCustom.Checked = false;
+            Save();
         }
 
         private void rbWater_CheckedChanged(object sender, EventArgs e)
@@ -212,45 +250,13 @@ namespace CoffeeMachine2._0
                 label7.Visible = true;
             }
         }
-
-        private void bSaveToMenu_Click(object sender, EventArgs e)
+        private void Save()
         {
             File.WriteAllText(xmlpath, String.Empty);
             XmlSerializer serialiser = new XmlSerializer(typeof(List<Drink>));
             TextWriter FileStream = new StreamWriter(xmlpath);
             serialiser.Serialize(FileStream, CoffeeMachine.drinks);
             FileStream.Close();
-            saved = true;
-        }
-
-        private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!saved)
-            {
-                DialogResult dialog = MessageBox.Show(
-                "Сохранить программу и выйти?",
-                "Сохранение меню",
-                MessageBoxButtons.YesNoCancel,
-                MessageBoxIcon.Warning
-               );
-                if (dialog == DialogResult.Yes)
-                {
-                    File.WriteAllText(xmlpath, String.Empty);
-                    XmlSerializer serialiser = new XmlSerializer(typeof(List<Drink>));
-                    TextWriter FileStream = new StreamWriter(xmlpath);
-                    serialiser.Serialize(FileStream, CoffeeMachine.drinks);
-                    FileStream.Close();
-                }
-                if (dialog == DialogResult.No)
-                {
-                    e.Cancel = false;
-                }
-                if (dialog == DialogResult.Cancel)
-                {
-                    e.Cancel = true;
-                }
-            }
-            
         }
     }
 }
