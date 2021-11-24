@@ -17,6 +17,8 @@ namespace CoffeeMachine2._0
         string xmlpath = "../../Menu.xml";
         CoffeeMachine cf = new CoffeeMachine();
         private string userBalance = "Внесено: ";
+        private delegate void cfStageDelegate();
+        cfStageDelegate[] massOfStages = new cfStageDelegate[4];
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +27,70 @@ namespace CoffeeMachine2._0
                 {
                     CoffeeMachine.drinks = (List<Drink>)serializer.Deserialize(stream);
                 }
+
+            massOfStages[0] = CoffeeMachineStageSelceting;
+            massOfStages[1] = CoffeeMachineStageSelceted;
+            massOfStages[2] = CoffeeMachineStageCoocking;
+            massOfStages[3] = CoffeeMachineStageCoocked;
+
+            SetStage(CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK);
+        }
+
+        void SetStage(CoffeeMachine.CoffeeMachineStage stage)
+        {
+            int stageNumber = (int)stage;
+
+            massOfStages[stageNumber]();
+        }
+
+        void CoffeeMachineStageSelceting()
+        {
+            tbTemperatureProp.Enabled = false;
+            tbSugarProp.Enabled = false;
+            butCook.Enabled = false;
+            butChangeNDrink.Enabled = false;
+            tbSugarProp.Value = 0;
+            tbTemperatureProp.Value = 0;
+            CoffeeMachine.selectedDrink = null;
+            labelAmount.Text = "Сумма к оплате: ";
+            labelBalance.Text = "Внесено: ";
+            foreach (Control db in Controls)
+            {
+                if (db is DrinkButton)
+                    (db as DrinkButton).EmptyButton();
+            }
+        }
+
+        void CoffeeMachineStageSelceted()
+        {
+            if (CoffeeMachine.selectedDrink.sugar)
+            tbTemperatureProp.Enabled = true;
+
+            if(CoffeeMachine.selectedDrink.temperature)
+            tbSugarProp.Enabled = true;
+
+            butCook.Enabled = true;
+        }
+
+        void CoffeeMachineStageCoocking()
+        {
+            foreach (Control formElement in Controls)
+            {
+                if (!(formElement is Panel) && !(formElement is Panel))
+                    formElement.Enabled = false;
+            }
+        }
+
+        void CoffeeMachineStageCoocked()
+        {
+            foreach (Control formElement in Controls)
+            {
+                formElement.Enabled = true;
+            }
+
+            butCook.Enabled = false;
+            butСancellation.Enabled = false;
+            butChangeNDrink.Enabled = true;
         }
 
         public void SetSettingsForDrinkButtons()
@@ -52,6 +118,7 @@ namespace CoffeeMachine2._0
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelCookStage.Text = cf.cookingStage;
+
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -59,6 +126,7 @@ namespace CoffeeMachine2._0
             timer1.Interval = 1;
             timer1.Start();
             cf.Cook();
+            SetStage(CoffeeMachine.cfStage);
             await Task.Delay(CoffeeMachine.selectedDrink.cookingTime + 1000);
             timer1.Stop();
         }
@@ -67,6 +135,7 @@ namespace CoffeeMachine2._0
         {
             labelAmountOfSugar.Text = labelAmountOfSugar.Text.Remove(labelAmountOfSugar.Text.Length - 1);
             labelAmountOfSugar.Text += tbSugarProp.Value.ToString();
+            CoffeeMachine.selectedDrink.userSugar = tbSugarProp.Value;
         }
 
         private void tbTemperatureProp_ValueChanged(object sender, EventArgs e)
@@ -88,6 +157,7 @@ namespace CoffeeMachine2._0
                     break;
             }
             labelUserTemperature.Text = tempDrinkDesign;
+            CoffeeMachine.selectedDrink.userTemperature = tbTemperatureProp.Value;
         }
 
         private void panelCoinOne_MouseDown(object sender, MouseEventArgs e)
@@ -136,11 +206,25 @@ namespace CoffeeMachine2._0
             labelAmount.Text = "Сумма к оплате: " + (sender as DrinkButton).thisDrink.cost;
 
             CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
+
+            SetStage(CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             SetSettingsForDrinkButtons();
+        }
+
+        private void butСancellation_Click(object sender, EventArgs e)
+        {
+            cf.balance = 0;
+            cf.change = 0;
+            SetStage(CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK);
+        }
+
+        private void butChangeNDrink_Click(object sender, EventArgs e)
+        {
+            SetStage(CoffeeMachine.CoffeeMachineStage.COOCKED_DRINK);
         }
     }
 }

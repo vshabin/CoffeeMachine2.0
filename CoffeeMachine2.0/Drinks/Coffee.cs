@@ -15,7 +15,7 @@ namespace CoffeeMachine2._0
             string upicture = "../Resources/my_image.png",
             int ucost = 10,
             bool utemperature = false,
-            bool usugar = false,
+            bool usugar = true,
             int uuserStrenght = 3,
             int uCookingTime = 5000)
         {

@@ -16,19 +16,33 @@ namespace CoffeeMachine2._0
 
         public static List<Drink> drinks = new List<Drink>();
 
+        public static CoffeeMachineStage cfStage = CoffeeMachineStage.SELECTING_DRINK;
+
+        public enum CoffeeMachineStage
+        {
+            SELECTING_DRINK,
+            SELECTED_DRINK,
+            COOCKING_DRINK,
+            COOCKED_DRINK
+        }
+
         public async void Cook()//готовка напитка
         {
             if (balance >= selectedDrink.cost)
             {
+                cfStage = CoffeeMachineStage.COOCKING_DRINK;
                 /* Добавить текст с теми параметрами, которые выбрал пользователь в строку ниже */
                 cookingStage = "Готовлю ваш заказ...";
                 await Task.Delay(selectedDrink.cookingTime);
                 CountChange();
-                cookingStage = string.Format("Ваш заказ готов! Всего доброго! Ваши {0} рублей.", change);
+                cookingStage = string.Format("Ваш заказ готов: {1}, {2}, {3}! Всего доброго! Ваши {0} рублей.", change, selectedDrink.name, selectedDrink.userSugar, selectedDrink.userTemperature);
                 balance = 0;
             }
             else
+            {
+                cfStage = CoffeeMachineStage.SELECTED_DRINK;
                 cookingStage = "У вас недостаточно денег!";
+            }
         }
 
         private void CountChange()//рассчитать сдачу

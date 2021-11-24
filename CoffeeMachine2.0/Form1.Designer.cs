@@ -39,13 +39,14 @@ namespace CoffeeMachine2._0
             this.labelTemperature = new System.Windows.Forms.Label();
             this.labelUserTemperature = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDisplay = new System.Windows.Forms.Panel();
             this.labelBalance = new System.Windows.Forms.Label();
             this.labelCookStage = new System.Windows.Forms.Label();
             this.labelAmount = new System.Windows.Forms.Label();
             this.labelDrink = new System.Windows.Forms.Label();
             this.panelCoinOne = new System.Windows.Forms.Panel();
             this.panelCoinAcceptor = new System.Windows.Forms.Panel();
+            this.butСancellation = new System.Windows.Forms.Button();
             this.drinkButton5 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton6 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton7 = new CoffeeMachine2._0.DrinkButton();
@@ -54,14 +55,15 @@ namespace CoffeeMachine2._0
             this.drinkButton3 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton2 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton1 = new CoffeeMachine2._0.DrinkButton();
+            this.butChangeNDrink = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // butCook
             // 
-            this.butCook.Location = new System.Drawing.Point(356, 229);
+            this.butCook.Location = new System.Drawing.Point(333, 229);
             this.butCook.Name = "butCook";
             this.butCook.Size = new System.Drawing.Size(75, 23);
             this.butCook.TabIndex = 1;
@@ -130,18 +132,18 @@ namespace CoffeeMachine2._0
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // panel1
+            // panelDisplay
             // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.labelBalance);
-            this.panel1.Controls.Add(this.labelCookStage);
-            this.panel1.Controls.Add(this.labelAmount);
-            this.panel1.Controls.Add(this.labelDrink);
-            this.panel1.Location = new System.Drawing.Point(197, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(294, 88);
-            this.panel1.TabIndex = 14;
+            this.panelDisplay.BackColor = System.Drawing.Color.Navy;
+            this.panelDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelDisplay.Controls.Add(this.labelBalance);
+            this.panelDisplay.Controls.Add(this.labelCookStage);
+            this.panelDisplay.Controls.Add(this.labelAmount);
+            this.panelDisplay.Controls.Add(this.labelDrink);
+            this.panelDisplay.Location = new System.Drawing.Point(197, 25);
+            this.panelDisplay.Name = "panelDisplay";
+            this.panelDisplay.Size = new System.Drawing.Size(294, 88);
+            this.panelDisplay.TabIndex = 14;
             // 
             // labelBalance
             // 
@@ -207,6 +209,16 @@ namespace CoffeeMachine2._0
             this.panelCoinAcceptor.TabIndex = 9;
             this.panelCoinAcceptor.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelCoinAcceptor_DragDrop);
             this.panelCoinAcceptor.DragOver += new System.Windows.Forms.DragEventHandler(this.panelCoinAcceptor_DragOver);
+            // 
+            // butСancellation
+            // 
+            this.butСancellation.Location = new System.Drawing.Point(252, 229);
+            this.butСancellation.Name = "butСancellation";
+            this.butСancellation.Size = new System.Drawing.Size(75, 23);
+            this.butСancellation.TabIndex = 23;
+            this.butСancellation.Text = "Отмена";
+            this.butСancellation.UseVisualStyleBackColor = true;
+            this.butСancellation.Click += new System.EventHandler(this.butСancellation_Click);
             // 
             // drinkButton5
             // 
@@ -280,11 +292,23 @@ namespace CoffeeMachine2._0
             this.drinkButton1.TabIndex = 15;
             this.drinkButton1.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
+            // butChangeNDrink
+            // 
+            this.butChangeNDrink.Location = new System.Drawing.Point(415, 230);
+            this.butChangeNDrink.Name = "butChangeNDrink";
+            this.butChangeNDrink.Size = new System.Drawing.Size(75, 23);
+            this.butChangeNDrink.TabIndex = 24;
+            this.butChangeNDrink.Text = "Сдача";
+            this.butChangeNDrink.UseVisualStyleBackColor = true;
+            this.butChangeNDrink.Click += new System.EventHandler(this.butChangeNDrink_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 742);
+            this.Controls.Add(this.butChangeNDrink);
+            this.Controls.Add(this.butСancellation);
             this.Controls.Add(this.drinkButton5);
             this.Controls.Add(this.drinkButton6);
             this.Controls.Add(this.drinkButton7);
@@ -293,7 +317,7 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.drinkButton3);
             this.Controls.Add(this.drinkButton2);
             this.Controls.Add(this.drinkButton1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelDisplay);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelCoinOne);
             this.Controls.Add(this.panelCoinAcceptor);
@@ -309,8 +333,8 @@ namespace CoffeeMachine2._0
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelDisplay.ResumeLayout(false);
+            this.panelDisplay.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +352,7 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.Panel panelCoinAcceptor;
         private System.Windows.Forms.Panel panelCoinOne;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDisplay;
         private System.Windows.Forms.Label labelBalance;
         private System.Windows.Forms.Label labelCookStage;
         private System.Windows.Forms.Label labelAmount;
@@ -341,6 +365,8 @@ namespace CoffeeMachine2._0
         private DrinkButton drinkButton6;
         private DrinkButton drinkButton7;
         private DrinkButton drinkButton8;
+        private System.Windows.Forms.Button butСancellation;
+        private System.Windows.Forms.Button butChangeNDrink;
     }
 }
 
