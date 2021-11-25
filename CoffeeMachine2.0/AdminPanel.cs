@@ -17,6 +17,7 @@ namespace CoffeeMachine2._0
         string xmlpath = "../../Menu.xml";
         string tempImage= "../../Resources/DefaultIcon.png";
 
+
         public AdminPanel()
         {
             InitializeComponent();
