@@ -93,6 +93,46 @@ namespace CoffeeMachine2._0.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap cf_money1 {
+            get {
+                object obj = ResourceManager.GetObject("cf_money1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cf_money10 {
+            get {
+                object obj = ResourceManager.GetObject("cf_money10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cf_money2 {
+            get {
+                object obj = ResourceManager.GetObject("cf_money2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cf_money5 {
+            get {
+                object obj = ResourceManager.GetObject("cf_money5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap DefaultIcon {
             get {
                 object obj = ResourceManager.GetObject("DefaultIcon", resourceCulture);
@@ -156,16 +196,6 @@ namespace CoffeeMachine2._0.Properties {
         public static System.Drawing.Bitmap milkshake {
             get {
                 object obj = ResourceManager.GetObject("milkshake", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap monetaIcon1 {
-            get {
-                object obj = ResourceManager.GetObject("monetaIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

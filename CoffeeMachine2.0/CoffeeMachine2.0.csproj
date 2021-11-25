@@ -145,5 +145,17 @@
   <ItemGroup>
     <None Include="Resources\milkshake.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cf_money2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cf_money5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cf_money10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cf_money1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

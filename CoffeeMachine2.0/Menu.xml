@@ -52,7 +52,7 @@
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Горячий</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Coffee">
@@ -79,13 +79,13 @@
   </Drink>
   <Drink>
     <name>Молочный коктейль</name>
-    <picturepath>..\..\Resources\milkshake.png</picturepath>
-    <cost>50</cost>
+    <picturepath>C:\Users\Павел\source\repos\CoffeeMachine2.0\CoffeMachine_05\CoffeeMachine2.0\Resources\milkshake.png</picturepath>
+    <cost>60</cost>
     <temperature>false</temperature>
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Горячий</userTemperature>
     <cookingTime>20000</cookingTime>
   </Drink>
 </ArrayOfDrink>
