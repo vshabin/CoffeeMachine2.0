@@ -18,7 +18,8 @@ namespace CoffeeMachine2._0
         public string picturepath;
         public int cost;
         public bool temperature, sugar;
-        public int userStrenght, userSugar, userTemperature;
+        public int userStrenght, userSugar;
+        public string userTemperature = "Горячий";
         public int cookingTime;
 
         public Drink()
@@ -33,7 +34,7 @@ namespace CoffeeMachine2._0
             int uuserStrenght = 3,
             int uCookingTime = 5000,
             int uUserSugar = 0,
-            int uUserTemperature = 0)
+            string uUserTemperature = "Горячий")
         {
             name = uname;
             picturepath = upicture;

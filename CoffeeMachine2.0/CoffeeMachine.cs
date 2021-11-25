@@ -11,6 +11,8 @@ namespace CoffeeMachine2._0
         public int balance = 0;
         public int change = 0;
         public string cookingStage = "Ожидаю заказ...";
+        public bool isCoocking = false;
+        public bool balanceZeroMore = false;
 
         public static Drink selectedDrink;
 
@@ -28,27 +30,34 @@ namespace CoffeeMachine2._0
 
         public async void Cook()//готовка напитка
         {
-            if (balance >= selectedDrink.cost)
+            if (balanceZeroMore)
             {
                 cfStage = CoffeeMachineStage.COOCKING_DRINK;
+                isCoocking = true;
                 /* Добавить текст с теми параметрами, которые выбрал пользователь в строку ниже */
-                cookingStage = "Готовлю ваш заказ...";
                 await Task.Delay(selectedDrink.cookingTime);
                 CountChange();
-                cookingStage = string.Format("Ваш заказ готов: {1}, {2}, {3}! Всего доброго! Ваши {0} рублей.", change, selectedDrink.name, selectedDrink.userSugar, selectedDrink.userTemperature);
                 balance = 0;
+                cfStage = CoffeeMachineStage.COOCKED_DRINK;
+                isCoocking = true;
             }
             else
             {
                 cfStage = CoffeeMachineStage.SELECTED_DRINK;
-                cookingStage = "У вас недостаточно денег!";
+                isCoocking = false;
             }
+            balanceZeroMore = false;
         }
 
-        private void CountChange()//рассчитать сдачу
+        public void CountChange()//рассчитать сдачу
         {
-            if(balance > selectedDrink.cost)
+            //if(balance > selectedDrink.cost)
             change = balance - selectedDrink.cost;
+
+            if (change >= 0)
+                balanceZeroMore = true;
+            else
+                balanceZeroMore = false;
         }
 
         public void Cancellation()//отмена действий

@@ -47,6 +47,7 @@ namespace CoffeeMachine2._0
             this.panelCoinOne = new System.Windows.Forms.Panel();
             this.panelCoinAcceptor = new System.Windows.Forms.Panel();
             this.butСancellation = new System.Windows.Forms.Button();
+            this.butChangeNDrink = new System.Windows.Forms.Button();
             this.drinkButton5 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton6 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton7 = new CoffeeMachine2._0.DrinkButton();
@@ -55,15 +56,20 @@ namespace CoffeeMachine2._0
             this.drinkButton3 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton2 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton1 = new CoffeeMachine2._0.DrinkButton();
-            this.butChangeNDrink = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).BeginInit();
             this.panelDisplay.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // butCook
             // 
-            this.butCook.Location = new System.Drawing.Point(333, 229);
+            this.butCook.Location = new System.Drawing.Point(187, 346);
             this.butCook.Name = "butCook";
             this.butCook.Size = new System.Drawing.Size(75, 23);
             this.butCook.TabIndex = 1;
@@ -77,7 +83,7 @@ namespace CoffeeMachine2._0
             // 
             // tbSugarProp
             // 
-            this.tbSugarProp.Location = new System.Drawing.Point(12, 58);
+            this.tbSugarProp.Location = new System.Drawing.Point(388, 252);
             this.tbSugarProp.Maximum = 4;
             this.tbSugarProp.Name = "tbSugarProp";
             this.tbSugarProp.Size = new System.Drawing.Size(104, 45);
@@ -87,7 +93,7 @@ namespace CoffeeMachine2._0
             // labelAmountOfSugar
             // 
             this.labelAmountOfSugar.AutoSize = true;
-            this.labelAmountOfSugar.Location = new System.Drawing.Point(9, 42);
+            this.labelAmountOfSugar.Location = new System.Drawing.Point(385, 236);
             this.labelAmountOfSugar.Name = "labelAmountOfSugar";
             this.labelAmountOfSugar.Size = new System.Drawing.Size(183, 13);
             this.labelAmountOfSugar.TabIndex = 4;
@@ -95,19 +101,17 @@ namespace CoffeeMachine2._0
             // 
             // tbTemperatureProp
             // 
-            this.tbTemperatureProp.Location = new System.Drawing.Point(43, 131);
+            this.tbTemperatureProp.Location = new System.Drawing.Point(392, 335);
             this.tbTemperatureProp.Maximum = 3;
             this.tbTemperatureProp.Name = "tbTemperatureProp";
-            this.tbTemperatureProp.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tbTemperatureProp.Size = new System.Drawing.Size(45, 104);
+            this.tbTemperatureProp.Size = new System.Drawing.Size(104, 45);
             this.tbTemperatureProp.TabIndex = 5;
-            this.tbTemperatureProp.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.tbTemperatureProp.ValueChanged += new System.EventHandler(this.tbTemperatureProp_ValueChanged);
             // 
             // labelTemperature
             // 
             this.labelTemperature.AutoSize = true;
-            this.labelTemperature.Location = new System.Drawing.Point(13, 112);
+            this.labelTemperature.Location = new System.Drawing.Point(389, 306);
             this.labelTemperature.Name = "labelTemperature";
             this.labelTemperature.Size = new System.Drawing.Size(80, 13);
             this.labelTemperature.TabIndex = 6;
@@ -116,7 +120,7 @@ namespace CoffeeMachine2._0
             // labelUserTemperature
             // 
             this.labelUserTemperature.AutoSize = true;
-            this.labelUserTemperature.Location = new System.Drawing.Point(89, 112);
+            this.labelUserTemperature.Location = new System.Drawing.Point(465, 306);
             this.labelUserTemperature.Name = "labelUserTemperature";
             this.labelUserTemperature.Size = new System.Drawing.Size(58, 13);
             this.labelUserTemperature.TabIndex = 7;
@@ -124,7 +128,7 @@ namespace CoffeeMachine2._0
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(-2, 1);
+            this.button1.Location = new System.Drawing.Point(574, 496);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -140,9 +144,9 @@ namespace CoffeeMachine2._0
             this.panelDisplay.Controls.Add(this.labelCookStage);
             this.panelDisplay.Controls.Add(this.labelAmount);
             this.panelDisplay.Controls.Add(this.labelDrink);
-            this.panelDisplay.Location = new System.Drawing.Point(197, 25);
+            this.panelDisplay.Location = new System.Drawing.Point(16, 142);
             this.panelDisplay.Name = "panelDisplay";
-            this.panelDisplay.Size = new System.Drawing.Size(294, 88);
+            this.panelDisplay.Size = new System.Drawing.Size(419, 88);
             this.panelDisplay.TabIndex = 14;
             // 
             // labelBalance
@@ -181,29 +185,29 @@ namespace CoffeeMachine2._0
             // labelDrink
             // 
             this.labelDrink.AutoSize = true;
-            this.labelDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDrink.Font = new System.Drawing.Font("Tempus Sans ITC", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDrink.ForeColor = System.Drawing.Color.White;
             this.labelDrink.Location = new System.Drawing.Point(15, 15);
             this.labelDrink.Name = "labelDrink";
-            this.labelDrink.Size = new System.Drawing.Size(56, 13);
+            this.labelDrink.Size = new System.Drawing.Size(56, 15);
             this.labelDrink.TabIndex = 3;
             this.labelDrink.Text = "Напиток: ";
             // 
             // panelCoinOne
             // 
             this.panelCoinOne.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCoinOne.BackgroundImage")));
-            this.panelCoinOne.Location = new System.Drawing.Point(527, 25);
+            this.panelCoinOne.Location = new System.Drawing.Point(11, 14);
             this.panelCoinOne.Name = "panelCoinOne";
             this.panelCoinOne.Size = new System.Drawing.Size(100, 100);
             this.panelCoinOne.TabIndex = 10;
-            this.panelCoinOne.Tag = "1";
+            this.panelCoinOne.Tag = "50";
             this.panelCoinOne.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
             // 
             // panelCoinAcceptor
             // 
             this.panelCoinAcceptor.AllowDrop = true;
             this.panelCoinAcceptor.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.GetMoneyIcon;
-            this.panelCoinAcceptor.Location = new System.Drawing.Point(197, 119);
+            this.panelCoinAcceptor.Location = new System.Drawing.Point(71, 236);
             this.panelCoinAcceptor.Name = "panelCoinAcceptor";
             this.panelCoinAcceptor.Size = new System.Drawing.Size(294, 104);
             this.panelCoinAcceptor.TabIndex = 9;
@@ -212,13 +216,23 @@ namespace CoffeeMachine2._0
             // 
             // butСancellation
             // 
-            this.butСancellation.Location = new System.Drawing.Point(252, 229);
+            this.butСancellation.Location = new System.Drawing.Point(106, 346);
             this.butСancellation.Name = "butСancellation";
             this.butСancellation.Size = new System.Drawing.Size(75, 23);
             this.butСancellation.TabIndex = 23;
             this.butСancellation.Text = "Отмена";
             this.butСancellation.UseVisualStyleBackColor = true;
             this.butСancellation.Click += new System.EventHandler(this.butСancellation_Click);
+            // 
+            // butChangeNDrink
+            // 
+            this.butChangeNDrink.Location = new System.Drawing.Point(269, 347);
+            this.butChangeNDrink.Name = "butChangeNDrink";
+            this.butChangeNDrink.Size = new System.Drawing.Size(75, 23);
+            this.butChangeNDrink.TabIndex = 24;
+            this.butChangeNDrink.Text = "Сдача";
+            this.butChangeNDrink.UseVisualStyleBackColor = true;
+            this.butChangeNDrink.Click += new System.EventHandler(this.butChangeNDrink_Click);
             // 
             // drinkButton5
             // 
@@ -292,21 +306,59 @@ namespace CoffeeMachine2._0
             this.drinkButton1.TabIndex = 15;
             this.drinkButton1.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
-            // butChangeNDrink
+            // menuStrip1
             // 
-            this.butChangeNDrink.Location = new System.Drawing.Point(415, 230);
-            this.butChangeNDrink.Name = "butChangeNDrink";
-            this.butChangeNDrink.Size = new System.Drawing.Size(75, 23);
-            this.butChangeNDrink.TabIndex = 24;
-            this.butChangeNDrink.Text = "Сдача";
-            this.butChangeNDrink.UseVisualStyleBackColor = true;
-            this.butChangeNDrink.Click += new System.EventHandler(this.butChangeNDrink_Click);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelCoinOne);
+            this.panel1.Location = new System.Drawing.Point(696, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(121, 447);
+            this.panel1.TabIndex = 26;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Location = new System.Drawing.Point(11, 122);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(100, 100);
+            this.panel2.TabIndex = 11;
+            this.panel2.Tag = "50";
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Location = new System.Drawing.Point(11, 228);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 100);
+            this.panel3.TabIndex = 11;
+            this.panel3.Tag = "50";
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.Location = new System.Drawing.Point(11, 334);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 100);
+            this.panel4.TabIndex = 11;
+            this.panel4.Tag = "50";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 742);
+            this.ClientSize = new System.Drawing.Size(817, 742);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.butChangeNDrink);
             this.Controls.Add(this.butСancellation);
             this.Controls.Add(this.drinkButton5);
@@ -319,7 +371,6 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.drinkButton1);
             this.Controls.Add(this.panelDisplay);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panelCoinOne);
             this.Controls.Add(this.panelCoinAcceptor);
             this.Controls.Add(this.labelUserTemperature);
             this.Controls.Add(this.labelTemperature);
@@ -327,14 +378,16 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.labelAmountOfSugar);
             this.Controls.Add(this.tbSugarProp);
             this.Controls.Add(this.butCook);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).EndInit();
             this.panelDisplay.ResumeLayout(false);
             this.panelDisplay.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,6 +420,11 @@ namespace CoffeeMachine2._0
         private DrinkButton drinkButton8;
         private System.Windows.Forms.Button butСancellation;
         private System.Windows.Forms.Button butChangeNDrink;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

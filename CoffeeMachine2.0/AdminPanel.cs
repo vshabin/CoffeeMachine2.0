@@ -16,7 +16,6 @@ namespace CoffeeMachine2._0
     {
         string xmlpath = "../../Menu.xml";
         string tempImage= "../../Resources/DefaultIcon.png";
-        bool saved = true;
 
         public AdminPanel()
         {
@@ -92,7 +91,6 @@ namespace CoffeeMachine2._0
             ListOfDrinks.Items.Add(newDrink.name);
             tempImage = "../../Resources/DefaultIcon.png";
             pictureBox1.Image = Image.FromFile(tempImage);
-            saved = false;
             if (CoffeeMachine.drinks.Count == 8)
             {
                 lNotice.Visible = true;
@@ -106,7 +104,6 @@ namespace CoffeeMachine2._0
             if (ListOfDrinks.SelectedItems.Count == 0) return;
             CoffeeMachine.drinks.RemoveAt(ListOfDrinks.SelectedIndex);
             ListOfDrinks.Items.RemoveAt(ListOfDrinks.SelectedIndex);
-            saved = false;
             Save();
         }
 
@@ -189,7 +186,6 @@ namespace CoffeeMachine2._0
             }
             tempImage = "../../Resources/DefaultIcon.png";
             pictureBox1.Image = Image.FromFile(tempImage);
-            saved = false;
             rbCoffee.Checked = false;
             rbWater.Checked = false;
             rbTea.Checked = false;
@@ -257,6 +253,16 @@ namespace CoffeeMachine2._0
             TextWriter FileStream = new StreamWriter(xmlpath);
             serialiser.Serialize(FileStream, CoffeeMachine.drinks);
             FileStream.Close();
+        }
+
+        private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 main = this.Owner as Form1;
+            if (main != null)
+            {
+                main.Opacity = 1;
+                main.SetSettingsForDrinkButtons();
+            }
         }
     }
 }
