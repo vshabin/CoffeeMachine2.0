@@ -370,6 +370,7 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.ListOfDrinks);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

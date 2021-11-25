@@ -7,6 +7,8 @@
     <temperature>true</temperature>
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Coffee">
@@ -16,6 +18,8 @@
     <temperature>false</temperature>
     <sugar>true</sugar>
     <userStrenght>2</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Coffee">
@@ -25,6 +29,8 @@
     <temperature>true</temperature>
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Coffee">
@@ -34,6 +40,8 @@
     <temperature>true</temperature>
     <sugar>true</sugar>
     <userStrenght>2</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Tea">
@@ -43,6 +51,8 @@
     <temperature>true</temperature>
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Coffee">
@@ -52,15 +62,19 @@
     <temperature>false</temperature>
     <sugar>true</sugar>
     <userStrenght>2</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Water">
     <name>Вода</name>
     <picturepath>..\..\Resources\water.png</picturepath>
-    <cost>15</cost>
+    <cost>10</cost>
     <temperature>true</temperature>
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>2000</cookingTime>
   </Drink>
   <Drink>
@@ -70,6 +84,8 @@
     <temperature>false</temperature>
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>
+    <userSugar>0</userSugar>
+    <userTemperature>0</userTemperature>
     <cookingTime>20000</cookingTime>
   </Drink>
 </ArrayOfDrink>

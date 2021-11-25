@@ -178,8 +178,11 @@ namespace CoffeeMachine2._0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form ap = new AdminPanel();
-            ap.Show();
+            Form newForm = new AdminPanel();
+            newForm.Owner = this; //устанавливаем родительской первую форму
+            this.Opacity = .75; // устанавливаем прозрачность на 75% (для красоты)
+            newForm.ShowInTaskbar = false; // скрываем всплывающую форму из панели задач (для красоты)
+            newForm.ShowDialog(this); //открываем вторую форму в модальном режиме
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -208,11 +211,6 @@ namespace CoffeeMachine2._0
             CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
 
             SetStage(CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK);
-        }
-
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            SetSettingsForDrinkButtons();
         }
 
         private void butСancellation_Click(object sender, EventArgs e)
