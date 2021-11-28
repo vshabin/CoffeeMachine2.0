@@ -304,7 +304,7 @@ namespace CoffeeMachine2._0
             this.tsmAdminPanel});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
