@@ -52,7 +52,7 @@
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Горячий</userTemperature>
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Coffee">
@@ -67,25 +67,25 @@
     <cookingTime>5000</cookingTime>
   </Drink>
   <Drink xsi:type="Water">
-    <name>Вода</name>
+    <name>Вода газированная</name>
     <picturepath>..\..\Resources\water.png</picturepath>
     <cost>10</cost>
     <temperature>true</temperature>
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>2000</cookingTime>
   </Drink>
   <Drink>
     <name>Молочный коктейль</name>
     <picturepath>..\..\Resources\milkshake.png</picturepath>
-    <cost>50</cost>
+    <cost>60</cost>
     <temperature>false</temperature>
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Горячий</userTemperature>
     <cookingTime>20000</cookingTime>
   </Drink>
 </ArrayOfDrink>

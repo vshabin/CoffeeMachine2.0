@@ -51,7 +51,7 @@ namespace CoffeeMachine2._0
 
         public void CountChange()//рассчитать сдачу
         {
-            //if(balance > selectedDrink.cost)
+            if(selectedDrink != null)
             change = balance - selectedDrink.cost;
 
             if (change >= 0)

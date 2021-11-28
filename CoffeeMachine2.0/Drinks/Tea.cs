@@ -24,8 +24,6 @@ namespace CoffeeMachine2._0
             temperature = utemperature;
             sugar = usugar;
             cookingTime = uCookingTime;
-
-
         }
     }
 }

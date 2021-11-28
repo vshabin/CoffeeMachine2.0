@@ -49,5 +49,33 @@ namespace CoffeeMachine2._0
             selected = false;
             BackColor = defaultColor;
         }
+
+        private void pbDrinkButton_Click(object sender, EventArgs e)
+        {
+            SetSelectedButton();
+            Form1 main = this.Parent as Form1;
+            foreach (Control c in Controls)
+            {
+                if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
+                {
+                    (c as DrinkButton).EmptyButton();
+                }
+                else if (c is DrinkButton)
+                {
+                    (sender as DrinkButton).SetSelectedButton();
+                }
+            }
+
+            main.labelDrink.Text = "Напиток: " + thisDrink.name;
+
+            main.labelAmount.Text = "Сумма к оплате: " + thisDrink.cost;
+
+            CoffeeMachine.selectedDrink = thisDrink;
+
+            if (selected)
+                CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK;
+            else
+                CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+        }
     }
 }
