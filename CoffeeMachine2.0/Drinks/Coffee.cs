@@ -17,7 +17,8 @@ namespace CoffeeMachine2._0
             bool utemperature = false,
             bool usugar = true,
             int uuserStrenght = 3,
-            int uCookingTime = 5000)
+            int uCookingTime = 5000,
+            string uanimation = "../../Resources/coffee_cooking.gif")
         {
             name = uname;
             picturepath = upicture;
@@ -26,7 +27,7 @@ namespace CoffeeMachine2._0
             sugar = usugar;
             userStrenght = uuserStrenght;
             cookingTime = uCookingTime;
-
+            animation = uanimation;
         }
     }
 }

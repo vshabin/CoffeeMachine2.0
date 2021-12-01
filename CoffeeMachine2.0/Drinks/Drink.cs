@@ -21,6 +21,7 @@ namespace CoffeeMachine2._0
         public int userStrenght, userSugar;
         public string userTemperature = "Холодный";
         public int cookingTime;
+        public string animation;
 
         public Drink()
         {
@@ -33,6 +34,7 @@ namespace CoffeeMachine2._0
             bool usugar=false,
             int uuserStrenght = 3,
             int uCookingTime = 5000,
+            string uanimation = "../../Resources/default_animation.gif",
             int uUserSugar = 0,
             string uUserTemperature = "Холодный")
         {
@@ -43,8 +45,10 @@ namespace CoffeeMachine2._0
             sugar = usugar;
             userStrenght = uuserStrenght;
             cookingTime = uCookingTime;
+            animation = uanimation;
             userSugar = uUserSugar;
             userTemperature = uUserTemperature;
+            
         }
     }
 }

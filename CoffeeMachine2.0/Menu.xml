@@ -8,8 +8,9 @@
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>5000</cookingTime>
+    <animation>../../Resources/tea_cooking.gif</animation>
   </Drink>
   <Drink xsi:type="Coffee">
     <name>Капучино</name>
@@ -19,8 +20,9 @@
     <sugar>true</sugar>
     <userStrenght>2</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>5000</cookingTime>
+    <animation>../../Resources/coffee_cooking.gif</animation>
   </Drink>
   <Drink xsi:type="Coffee">
     <name>Американо</name>
@@ -30,8 +32,9 @@
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>5000</cookingTime>
+    <animation>../../Resources/coffee_cooking.gif</animation>
   </Drink>
   <Drink xsi:type="Coffee">
     <name>Эспрессо</name>
@@ -41,8 +44,9 @@
     <sugar>true</sugar>
     <userStrenght>2</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>5000</cookingTime>
+    <animation>../../Resources/coffee_cooking.gif</animation>
   </Drink>
   <Drink xsi:type="Tea">
     <name>Зелёный чай</name>
@@ -52,8 +56,9 @@
     <sugar>true</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>Горячий</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>5000</cookingTime>
+    <animation>../../Resources/tea_cooking.gif</animation>
   </Drink>
   <Drink xsi:type="Coffee">
     <name>Латте</name>
@@ -63,8 +68,9 @@
     <sugar>true</sugar>
     <userStrenght>2</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>0</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>5000</cookingTime>
+    <animation>../../Resources/coffee_cooking.gif</animation>
   </Drink>
   <Drink xsi:type="Water">
     <name>Вода газированная</name>
@@ -76,6 +82,7 @@
     <userSugar>0</userSugar>
     <userTemperature>Холодный</userTemperature>
     <cookingTime>2000</cookingTime>
+    <animation>../../Resources/water_cooking.gif</animation>
   </Drink>
   <Drink>
     <name>Молочный коктейль</name>
@@ -85,7 +92,8 @@
     <sugar>false</sugar>
     <userStrenght>0</userStrenght>
     <userSugar>0</userSugar>
-    <userTemperature>Горячий</userTemperature>
+    <userTemperature>Холодный</userTemperature>
     <cookingTime>20000</cookingTime>
+    <animation>..\..\Resources\default_animation.gif</animation>
   </Drink>
 </ArrayOfDrink>

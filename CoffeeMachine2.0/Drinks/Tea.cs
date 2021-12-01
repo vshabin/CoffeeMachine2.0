@@ -16,7 +16,8 @@ namespace CoffeeMachine2._0
             int ucost = 10,
             bool utemperature = false,
             bool usugar = true,
-            int uCookingTime = 5000)
+            int uCookingTime = 5000,
+            string uanimation= "../../Resources/tea_cooking.gif")
         {
             name = uname;
             picturepath = upicture;
@@ -24,6 +25,7 @@ namespace CoffeeMachine2._0
             temperature = utemperature;
             sugar = usugar;
             cookingTime = uCookingTime;
+            animation = uanimation;
         }
     }
 }

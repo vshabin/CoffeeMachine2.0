@@ -80,7 +80,7 @@ namespace CoffeeMachine2._0
                 }
             }
             CoffeeMachine.selectedDrink = null;
-            pictureBox1.Image = Image.FromFile("D:\\Users\\student\\Downloads\\selecting.PNG");
+            pbAnimation.Image = Image.FromFile("..\\..\\Resources\\selecting.png");
         }
 
         void CoffeeMachineStageSelceted()
@@ -115,11 +115,11 @@ namespace CoffeeMachine2._0
         {
             labelCookStage.Text = "Готовлю ваш заказ...";
 
-            pictureBox1.Image = Image.FromFile("D:\\Users\\student\\Downloads\\coocking.gif");
+            pbAnimation.Image = Image.FromFile(CoffeeMachine.selectedDrink.animation);
 
             foreach (Control formElement in Controls)
             {
-                if ((formElement != panelDisplay) && !(formElement is Label))
+                if ((formElement != panelDisplay) && !(formElement is Label)&& (formElement != pbAnimation))
                     formElement.Enabled = false;
             }
             CoffeeMachine.selectedDrink.userTemperature = tempDrinkDesign;
@@ -132,7 +132,7 @@ namespace CoffeeMachine2._0
                                       CoffeeMachine.selectedDrink.name,
                                       CoffeeMachine.selectedDrink.userSugar,
                                       CoffeeMachine.selectedDrink.userTemperature);
-            pictureBox1.Image = Image.FromFile("D:\\Users\\student\\Downloads\\coocked.gif");
+            pbAnimation.Image = Image.FromFile(CoffeeMachine.selectedDrink.picturepath);
             butChangeNDrink.Enabled = true;
         }
 

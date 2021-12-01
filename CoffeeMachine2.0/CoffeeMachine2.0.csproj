@@ -157,5 +157,20 @@
   <ItemGroup>
     <None Include="Resources\cf_money1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water_cooking.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tea_cooking.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selecting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee_cooking.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default_animation.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

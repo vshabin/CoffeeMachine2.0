@@ -139,8 +139,14 @@
   <data name="cf_money5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cf_money5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coffee_cooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coffee_cooking.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DefaultIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DefaultIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="default_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\default_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="espresso" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\espresso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +166,16 @@
   <data name="milkshake" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\milkshake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="selecting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\selecting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tea_cooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tea_cooking.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="water" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="water_cooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\water_cooking.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

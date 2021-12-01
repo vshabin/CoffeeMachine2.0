@@ -60,13 +60,13 @@ namespace CoffeeMachine2._0
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAnimation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).BeginInit();
             this.panelDisplay.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // butCook
@@ -304,7 +304,7 @@ namespace CoffeeMachine2._0
             this.tsmAdminPanel});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -357,17 +357,17 @@ namespace CoffeeMachine2._0
             this.panel2.Tag = "2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
             // 
-            // pictureBox1
+            // pbAnimation
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pbAnimation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(82, 343);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(305, 242);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
+            this.pbAnimation.Location = new System.Drawing.Point(82, 343);
+            this.pbAnimation.Name = "pbAnimation";
+            this.pbAnimation.Size = new System.Drawing.Size(305, 242);
+            this.pbAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAnimation.TabIndex = 27;
+            this.pbAnimation.TabStop = false;
             // 
             // Form1
             // 
@@ -375,7 +375,7 @@ namespace CoffeeMachine2._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(817, 899);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbAnimation);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.butChangeNDrink);
             this.Controls.Add(this.butСancellation);
@@ -409,7 +409,7 @@ namespace CoffeeMachine2._0
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnimation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,7 +445,7 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem tsmAdminPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAnimation;
         public System.Windows.Forms.Label labelDrink;
         public System.Windows.Forms.Label labelAmount;
     }

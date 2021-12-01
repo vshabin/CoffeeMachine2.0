@@ -52,16 +52,20 @@ namespace CoffeeMachine2._0
             this.rbCoffee = new System.Windows.Forms.RadioButton();
             this.rbWater = new System.Windows.Forms.RadioButton();
             this.cost = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.boolSugar = new System.Windows.Forms.CheckBox();
             this.boolTemperature = new System.Windows.Forms.CheckBox();
             this.SaveEdit = new System.Windows.Forms.Button();
             this.lNotice = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ListOfDrinks
@@ -69,12 +73,12 @@ namespace CoffeeMachine2._0
             this.ListOfDrinks.FormattingEnabled = true;
             this.ListOfDrinks.Location = new System.Drawing.Point(468, 39);
             this.ListOfDrinks.Name = "ListOfDrinks";
-            this.ListOfDrinks.Size = new System.Drawing.Size(320, 433);
+            this.ListOfDrinks.Size = new System.Drawing.Size(320, 563);
             this.ListOfDrinks.TabIndex = 0;
             // 
             // EditDrink
             // 
-            this.EditDrink.Location = new System.Drawing.Point(495, 503);
+            this.EditDrink.Location = new System.Drawing.Point(494, 630);
             this.EditDrink.Name = "EditDrink";
             this.EditDrink.Size = new System.Drawing.Size(121, 23);
             this.EditDrink.TabIndex = 1;
@@ -84,7 +88,7 @@ namespace CoffeeMachine2._0
             // 
             // DeleteDrink
             // 
-            this.DeleteDrink.Location = new System.Drawing.Point(639, 503);
+            this.DeleteDrink.Location = new System.Drawing.Point(638, 630);
             this.DeleteDrink.Name = "DeleteDrink";
             this.DeleteDrink.Size = new System.Drawing.Size(121, 23);
             this.DeleteDrink.TabIndex = 2;
@@ -103,7 +107,7 @@ namespace CoffeeMachine2._0
             // 
             // AddDrink
             // 
-            this.AddDrink.Location = new System.Drawing.Point(116, 498);
+            this.AddDrink.Location = new System.Drawing.Point(116, 630);
             this.AddDrink.Name = "AddDrink";
             this.AddDrink.Size = new System.Drawing.Size(177, 23);
             this.AddDrink.TabIndex = 5;
@@ -134,15 +138,16 @@ namespace CoffeeMachine2._0
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(124, 382);
+            this.label3.Location = new System.Drawing.Point(124, 367);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Изображение:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // uploadImage
             // 
-            this.uploadImage.Location = new System.Drawing.Point(126, 410);
+            this.uploadImage.Location = new System.Drawing.Point(126, 401);
             this.uploadImage.Name = "uploadImage";
             this.uploadImage.Size = new System.Drawing.Size(154, 23);
             this.uploadImage.TabIndex = 3;
@@ -193,6 +198,9 @@ namespace CoffeeMachine2._0
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.TimeToCook);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.rbCustom);
@@ -214,7 +222,7 @@ namespace CoffeeMachine2._0
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(13, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 453);
+            this.panel1.Size = new System.Drawing.Size(375, 585);
             this.panel1.TabIndex = 3;
             // 
             // TimeToCook
@@ -298,22 +306,6 @@ namespace CoffeeMachine2._0
             this.cost.TabIndex = 22;
             this.cost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cost_KeyUp);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.ErrorImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
-            this.pictureBox1.Image = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
-            this.pictureBox1.InitialImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 358);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // boolSugar
             // 
             this.boolSugar.AutoSize = true;
@@ -334,7 +326,7 @@ namespace CoffeeMachine2._0
             // 
             // SaveEdit
             // 
-            this.SaveEdit.Location = new System.Drawing.Point(116, 498);
+            this.SaveEdit.Location = new System.Drawing.Point(116, 630);
             this.SaveEdit.Name = "SaveEdit";
             this.SaveEdit.Size = new System.Drawing.Size(177, 23);
             this.SaveEdit.TabIndex = 6;
@@ -348,18 +340,70 @@ namespace CoffeeMachine2._0
             this.lNotice.AutoSize = true;
             this.lNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lNotice.ForeColor = System.Drawing.Color.Red;
-            this.lNotice.Location = new System.Drawing.Point(452, 475);
+            this.lNotice.Location = new System.Drawing.Point(451, 602);
             this.lNotice.Name = "lNotice";
             this.lNotice.Size = new System.Drawing.Size(348, 25);
             this.lNotice.TabIndex = 8;
             this.lNotice.Text = "Вы достигли максимум напитков.";
             this.lNotice.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.ErrorImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
+            this.pictureBox1.Image = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
+            this.pictureBox1.InitialImage = global::CoffeeMachine2._0.Properties.Resources.DefaultIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 349);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.ErrorImage = global::CoffeeMachine2._0.Properties.Resources.default_animation;
+            this.pictureBox2.Image = global::CoffeeMachine2._0.Properties.Resources.default_animation;
+            this.pictureBox2.InitialImage = global::CoffeeMachine2._0.Properties.Resources.default_animation;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 468);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(85, 95);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(127, 523);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Загрузить анимацию";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(124, 487);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Анимация:";
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 533);
+            this.ClientSize = new System.Drawing.Size(800, 658);
             this.Controls.Add(this.lNotice);
             this.Controls.Add(this.SaveEdit);
             this.Controls.Add(this.AddDrink);
@@ -371,12 +415,14 @@ namespace CoffeeMachine2._0
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbStrenght)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TimeToCook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +458,8 @@ namespace CoffeeMachine2._0
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown TimeToCook;
         private System.Windows.Forms.Label lNotice;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

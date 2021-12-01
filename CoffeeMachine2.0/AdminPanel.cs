@@ -16,6 +16,7 @@ namespace CoffeeMachine2._0
     {
         string xmlpath = "../../Menu.xml";
         string tempImage= "../../Resources/DefaultIcon.png";
+        string tempAnimation = "../../Resources/default_animation.gif";
 
 
         public AdminPanel()
@@ -86,12 +87,12 @@ namespace CoffeeMachine2._0
                 boolTemperature.Checked,
                 boolSugar.Checked,
                 tbStrenght.Value,
-                (int)TimeToCook.Value * 1000);
+                (int)TimeToCook.Value * 1000,
+                tempAnimation);
             }
             CoffeeMachine.drinks.Add(newDrink);
             ListOfDrinks.Items.Add(newDrink.name);
-            tempImage = "../../Resources/DefaultIcon.png";
-            pictureBox1.Image = Image.FromFile(tempImage);
+            ClearAP();
             if (CoffeeMachine.drinks.Count == 8)
             {
                 lNotice.Visible = true;
@@ -116,7 +117,9 @@ namespace CoffeeMachine2._0
             Drink DrinkToEdit = CoffeeMachine.drinks[ListOfDrinks.SelectedIndex];
             name.Text = DrinkToEdit.name;
             tempImage = DrinkToEdit.picturepath;
+            tempAnimation = DrinkToEdit.animation;
             pictureBox1.Image = Image.FromFile(tempImage);
+            pictureBox2.Image = Image.FromFile(tempAnimation);
             cost.Value= DrinkToEdit.cost;
 
             if (DrinkToEdit.GetType() == typeof(Water))
@@ -183,14 +186,10 @@ namespace CoffeeMachine2._0
                 boolTemperature.Checked,
                 boolSugar.Checked,
                 tbStrenght.Value,
-                (int)TimeToCook.Value * 1000);
+                (int)TimeToCook.Value * 1000,
+                tempAnimation);
             }
-            tempImage = "../../Resources/DefaultIcon.png";
-            pictureBox1.Image = Image.FromFile(tempImage);
-            rbCoffee.Checked = false;
-            rbWater.Checked = false;
-            rbTea.Checked = false;
-            rbCustom.Checked = false;
+            ClearAP();
             Save();
         }
 
@@ -204,6 +203,9 @@ namespace CoffeeMachine2._0
                 label6.Visible = false;
                 label9.Visible = false;
                 label7.Visible = false;
+                label8.Visible = false;
+                pictureBox2.Visible = false;
+                button1.Visible = false;
             }
             else
             {
@@ -213,6 +215,9 @@ namespace CoffeeMachine2._0
                 label6.Visible = true;
                 label9.Visible = true;
                 label7.Visible = true;
+                label8.Visible = true;
+                pictureBox2.Visible = true;
+                button1.Visible = true;
             }
         }
 
@@ -224,6 +229,9 @@ namespace CoffeeMachine2._0
                 TimeToCook.Visible = false;
                 label9.Visible = false;
                 label7.Visible = false;
+                label8.Visible = false;
+                pictureBox2.Visible = false;
+                button1.Visible = false;
             }
             else
             {
@@ -231,6 +239,9 @@ namespace CoffeeMachine2._0
                 TimeToCook.Visible = true;
                 label9.Visible = true;
                 label7.Visible = true;
+                label8.Visible = true;
+                pictureBox2.Visible = true;
+                button1.Visible = true;
             }
         }
 
@@ -240,11 +251,17 @@ namespace CoffeeMachine2._0
             {
                 TimeToCook.Visible = false;
                 label7.Visible = false;
+                label8.Visible = false;
+                pictureBox2.Visible = false;
+                button1.Visible = false;
             }
             else
             {
                 TimeToCook.Visible = true;
                 label7.Visible = true;
+                label8.Visible = true;
+                pictureBox2.Visible = true;
+                button1.Visible = true;
             }
         }
         private void Save()
@@ -264,6 +281,52 @@ namespace CoffeeMachine2._0
                 main.Opacity = 1;
                 main.SetSettingsForDrinkButtons();
             }
+        }
+
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog res = new OpenFileDialog();
+            res.Filter = "GIF Files|*.gif";
+            if (res.ShowDialog() == DialogResult.OK)
+            {
+                tempAnimation = res.FileName;
+                pictureBox2.Image = Image.FromFile(tempAnimation);
+            }
+
+
+        }
+        void ClearAP()
+        {
+            name.Text = "";
+            cost.Value = 0;
+            rbWater.Checked = false;
+            rbTea.Checked = false;
+            rbCoffee.Checked = false;
+            rbCustom.Checked = false;
+            boolSugar.Checked = false;
+            boolTemperature.Checked = false;
+            tbStrenght.Value = 0;
+            TimeToCook.Value = 0;
+            tempImage = "../../Resources/DefaultIcon.png";
+            tempAnimation = "../../Resources/default_animation.gif";
+            pictureBox1.Image = Image.FromFile(tempImage);
+            pictureBox2.Image = Image.FromFile(tempAnimation);
         }
     }
 }
