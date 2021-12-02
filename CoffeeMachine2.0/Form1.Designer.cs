@@ -29,9 +29,7 @@ namespace CoffeeMachine2._0
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.butCook = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbSugarProp = new System.Windows.Forms.TrackBar();
             this.labelAmountOfSugar = new System.Windows.Forms.Label();
             this.tbTemperatureProp = new System.Windows.Forms.TrackBar();
@@ -45,7 +43,13 @@ namespace CoffeeMachine2._0
             this.panelCoinOne = new System.Windows.Forms.Panel();
             this.panelCoinAcceptor = new System.Windows.Forms.Panel();
             this.butСancellation = new System.Windows.Forms.Button();
-            this.butChangeNDrink = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tsmAdminPanel = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pbAnimation = new System.Windows.Forms.PictureBox();
             this.drinkButton5 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton6 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton7 = new CoffeeMachine2._0.DrinkButton();
@@ -54,13 +58,6 @@ namespace CoffeeMachine2._0
             this.drinkButton3 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton2 = new CoffeeMachine2._0.DrinkButton();
             this.drinkButton1 = new CoffeeMachine2._0.DrinkButton();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tsmAdminPanel = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pbAnimation = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbSugarProp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTemperatureProp)).BeginInit();
             this.panelDisplay.SuspendLayout();
@@ -78,10 +75,6 @@ namespace CoffeeMachine2._0
             this.butCook.Text = "Готовить";
             this.butCook.UseVisualStyleBackColor = true;
             this.butCook.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // tbSugarProp
             // 
@@ -216,15 +209,77 @@ namespace CoffeeMachine2._0
             this.butСancellation.UseVisualStyleBackColor = true;
             this.butСancellation.Click += new System.EventHandler(this.butСancellation_Click);
             // 
-            // butChangeNDrink
+            // menuStrip1
             // 
-            this.butChangeNDrink.Location = new System.Drawing.Point(185, 284);
-            this.butChangeNDrink.Name = "butChangeNDrink";
-            this.butChangeNDrink.Size = new System.Drawing.Size(96, 43);
-            this.butChangeNDrink.TabIndex = 24;
-            this.butChangeNDrink.Text = "Забрать сдачу и напиток";
-            this.butChangeNDrink.UseVisualStyleBackColor = true;
-            this.butChangeNDrink.Click += new System.EventHandler(this.butChangeNDrink_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAdminPanel});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tsmAdminPanel
+            // 
+            this.tsmAdminPanel.Name = "tsmAdminPanel";
+            this.tsmAdminPanel.Size = new System.Drawing.Size(79, 20);
+            this.tsmAdminPanel.Text = "Настройки";
+            this.tsmAdminPanel.Click += new System.EventHandler(this.tsmAdminPanel_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelCoinOne);
+            this.panel1.Location = new System.Drawing.Point(696, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(121, 447);
+            this.panel1.TabIndex = 26;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.cf_money10;
+            this.panel4.Location = new System.Drawing.Point(11, 334);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 100);
+            this.panel4.TabIndex = 11;
+            this.panel4.Tag = "10";
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.cf_money5;
+            this.panel3.Location = new System.Drawing.Point(11, 228);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 100);
+            this.panel3.TabIndex = 11;
+            this.panel3.Tag = "5";
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.cf_money2;
+            this.panel2.Location = new System.Drawing.Point(11, 122);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(100, 100);
+            this.panel2.TabIndex = 11;
+            this.panel2.Tag = "2";
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
+            // 
+            // pbAnimation
+            // 
+            this.pbAnimation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAnimation.Location = new System.Drawing.Point(82, 343);
+            this.pbAnimation.Name = "pbAnimation";
+            this.pbAnimation.Size = new System.Drawing.Size(305, 242);
+            this.pbAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAnimation.TabIndex = 27;
+            this.pbAnimation.TabStop = false;
+            this.pbAnimation.Click += new System.EventHandler(this.pbAnimation_Click);
             // 
             // drinkButton5
             // 
@@ -298,77 +353,6 @@ namespace CoffeeMachine2._0
             this.drinkButton1.TabIndex = 15;
             this.drinkButton1.Click += new System.EventHandler(this.drinkButton1_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmAdminPanel});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
-            this.menuStrip1.TabIndex = 25;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tsmAdminPanel
-            // 
-            this.tsmAdminPanel.Name = "tsmAdminPanel";
-            this.tsmAdminPanel.Size = new System.Drawing.Size(79, 20);
-            this.tsmAdminPanel.Text = "Настройки";
-            this.tsmAdminPanel.Click += new System.EventHandler(this.tsmAdminPanel_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panelCoinOne);
-            this.panel1.Location = new System.Drawing.Point(696, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(121, 447);
-            this.panel1.TabIndex = 26;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.cf_money10;
-            this.panel4.Location = new System.Drawing.Point(11, 334);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 100);
-            this.panel4.TabIndex = 11;
-            this.panel4.Tag = "10";
-            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.cf_money5;
-            this.panel3.Location = new System.Drawing.Point(11, 228);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 100);
-            this.panel3.TabIndex = 11;
-            this.panel3.Tag = "5";
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::CoffeeMachine2._0.Properties.Resources.cf_money2;
-            this.panel2.Location = new System.Drawing.Point(11, 122);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(100, 100);
-            this.panel2.TabIndex = 11;
-            this.panel2.Tag = "2";
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCoinOne_MouseDown);
-            // 
-            // pbAnimation
-            // 
-            this.pbAnimation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAnimation.Location = new System.Drawing.Point(82, 343);
-            this.pbAnimation.Name = "pbAnimation";
-            this.pbAnimation.Size = new System.Drawing.Size(305, 242);
-            this.pbAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAnimation.TabIndex = 27;
-            this.pbAnimation.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +361,6 @@ namespace CoffeeMachine2._0
             this.ClientSize = new System.Drawing.Size(817, 899);
             this.Controls.Add(this.pbAnimation);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.butChangeNDrink);
             this.Controls.Add(this.butСancellation);
             this.Controls.Add(this.drinkButton5);
             this.Controls.Add(this.drinkButton6);
@@ -418,7 +401,6 @@ namespace CoffeeMachine2._0
         #endregion
 
         private System.Windows.Forms.Button butCook;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TrackBar tbSugarProp;
         private System.Windows.Forms.Label labelAmountOfSugar;
         private System.Windows.Forms.TrackBar tbTemperatureProp;
@@ -438,7 +420,6 @@ namespace CoffeeMachine2._0
         private DrinkButton drinkButton7;
         private DrinkButton drinkButton8;
         private System.Windows.Forms.Button butСancellation;
-        private System.Windows.Forms.Button butChangeNDrink;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;

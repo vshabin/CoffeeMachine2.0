@@ -19,7 +19,7 @@ namespace CoffeeMachine2._0
         public int cost;
         public bool temperature, sugar;
         public int userStrenght, userSugar;
-        public string userTemperature = "Холодный";
+        public string userTemperature = "Горячий";
         public int cookingTime;
         public string animation;
 
@@ -36,7 +36,7 @@ namespace CoffeeMachine2._0
             int uCookingTime = 5000,
             string uanimation = "../../Resources/default_animation.gif",
             int uUserSugar = 0,
-            string uUserTemperature = "Холодный")
+            string uUserTemperature = "Горячий")
         {
             name = uname;
             picturepath = upicture;

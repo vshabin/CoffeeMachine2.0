@@ -26,8 +26,6 @@ namespace CoffeeMachine2._0
             InitializeComponent();
             BackColor = Color.FromArgb(249, 244, 230);
             panel1.BackColor = Color.FromArgb(241, 216, 129);
-            timer1.Interval = 1;
-            timer1.Start();
             XmlSerializer serializer = new XmlSerializer(typeof(List<Drink>));
                 using (FileStream stream = new FileStream(xmlpath, FileMode.Open))
                 {
@@ -40,6 +38,7 @@ namespace CoffeeMachine2._0
             massOfStages[3] = CoffeeMachineStageCoocked;
 
             CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            SetStage(CoffeeMachine.cfStage);
         }
 
         void SetStage(CoffeeMachine.CoffeeMachineStage stage)
@@ -78,8 +77,11 @@ namespace CoffeeMachine2._0
                     (db as DrinkButton).EmptyButton();
                     db.Enabled = true;
                 }
+                
             }
-            CoffeeMachine.selectedDrink = null;
+            CoffeeMachine.selectedDrink = null; 
+            if(pbAnimation.Image != null)
+            pbAnimation.Image.Dispose();
             pbAnimation.Image = Image.FromFile("..\\..\\Resources\\selecting.png");
         }
 
@@ -88,7 +90,7 @@ namespace CoffeeMachine2._0
             menuStrip1.Enabled = false;
             cf.CountChange();
             butСancellation.Enabled = true;
-
+            
             if (cf.balanceZeroMore)
             {
                 labelCookStage.Text = "Нажмите 'Готовить'";
@@ -109,31 +111,41 @@ namespace CoffeeMachine2._0
                 tbSugarProp.Enabled = true;
             else
                 tbSugarProp.Enabled = false;
+            pbAnimation.Enabled = true;
         }
 
         void CoffeeMachineStageCoocking()
         {
             labelCookStage.Text = "Готовлю ваш заказ...";
-
+            pbAnimation.Image.Dispose();
             pbAnimation.Image = Image.FromFile(CoffeeMachine.selectedDrink.animation);
 
             foreach (Control formElement in Controls)
             {
-                if ((formElement != panelDisplay) && !(formElement is Label)&& (formElement != pbAnimation))
+                if ((formElement != panelDisplay) && !(formElement is Label))
                     formElement.Enabled = false;
             }
             CoffeeMachine.selectedDrink.userTemperature = tempDrinkDesign;
+            pbAnimation.Enabled = true;
         }
 
         void CoffeeMachineStageCoocked()
         {
+                if(!CoffeeMachine.selectedDrink.temperature)
+                labelCookStage.Text = string.Format("Ваш заказ готов: {1}, {2} сах.! Всего доброго! Ваши {0} рублей.",
+                                      cf.change,
+                                      CoffeeMachine.selectedDrink.name,
+                                      CoffeeMachine.selectedDrink.userSugar);
+            else
                 labelCookStage.Text = string.Format("Ваш заказ готов: {1}, {2} сах.,{3}! Всего доброго! Ваши {0} рублей.",
                                       cf.change,
                                       CoffeeMachine.selectedDrink.name,
                                       CoffeeMachine.selectedDrink.userSugar,
                                       CoffeeMachine.selectedDrink.userTemperature);
+            pbAnimation.Image.Dispose();
             pbAnimation.Image = Image.FromFile(CoffeeMachine.selectedDrink.picturepath);
-            butChangeNDrink.Enabled = true;
+            pbAnimation.Enabled = true;
+            pbAnimation.Enabled = true;
         }
 
         public void SetSettingsForDrinkButtons()
@@ -160,7 +172,7 @@ namespace CoffeeMachine2._0
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            SetStage(CoffeeMachine.cfStage);
+            //SetStage(CoffeeMachine.cfStage);
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -168,8 +180,11 @@ namespace CoffeeMachine2._0
             cf.Cook();
             if(cf.isCoocking)
             CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.COOCKING_DRINK;
+            SetStage(CoffeeMachine.cfStage);
             await Task.Delay(CoffeeMachine.selectedDrink.cookingTime + 1000);
             cf.isCoocking = false;
+            CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.COOCKED_DRINK;
+            SetStage(CoffeeMachine.cfStage);
         }
 
         private void tbSugarProp_ValueChanged(object sender, EventArgs e)
@@ -215,6 +230,7 @@ namespace CoffeeMachine2._0
             cf.SetBalance(int.Parse(e.Data.GetData(typeof(int)).ToString()));
             labelBalance.Text = userBalance + cf.balance.ToString();
             cf.CountChange();
+            SetStage(CoffeeMachine.cfStage);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -246,6 +262,7 @@ namespace CoffeeMachine2._0
                 CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK;
             else
                 CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            SetStage(CoffeeMachine.cfStage);
         }
 
         private void butСancellation_Click(object sender, EventArgs e)
@@ -255,11 +272,12 @@ namespace CoffeeMachine2._0
             cf.balance = 0;
             cf.change = 0;
             CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            SetStage(CoffeeMachine.cfStage);
         }
 
         private void butChangeNDrink_Click(object sender, EventArgs e)
         {
-            CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            
         }
 
         private void tsmAdminPanel_Click(object sender, EventArgs e)
@@ -287,6 +305,12 @@ namespace CoffeeMachine2._0
                 if (result == DialogResult.No)
                     e.Cancel = true;
             }
+        }
+
+        private void pbAnimation_Click(object sender, EventArgs e)
+        {
+            CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            SetStage(CoffeeMachine.cfStage);
         }
     }
 }
