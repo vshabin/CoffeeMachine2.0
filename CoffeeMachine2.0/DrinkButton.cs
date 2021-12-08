@@ -16,19 +16,20 @@ namespace CoffeeMachine2._0
         Color defaultColor = Color.FromArgb(241, 216, 129);
         public bool selected = false;
         public Drink thisDrink;
+        static int numberOfDrink = 0;
 
         public DrinkButton()
         {
             BackColor = defaultColor;
             InitializeComponent();
+            Form1.drinkButtons.Add(this);
         }
 
         public void setDrink()
         {
 
-                labelInfoAboutDrinkDB.Text = thisDrink.name + " : " + thisDrink.cost + " рублей";
-                pbDrinkButton.Image = Image.FromFile(thisDrink.picturepath);
-
+            labelInfoAboutDrinkDB.Text = thisDrink.name + " : " + thisDrink.cost + " рублей";
+            pbDrinkButton.Image = Image.FromFile(thisDrink.picturepath);
         }
 
         public void SetSelectedButton()
@@ -61,17 +62,25 @@ namespace CoffeeMachine2._0
             else
                 element = sender as DrinkButton;
 
-            foreach (Control c in main.Controls)
+            foreach (DrinkButton db in Form1.drinkButtons)
             {
-                if (c is DrinkButton && c.Name != element.Name)
-                {
-                    (c as DrinkButton).EmptyButton();
-                }
-                else if (c is DrinkButton)
-                {
+                if (db.Name != element.Name)
+                    db.EmptyButton();
+                else
                     element.SetSelectedButton();
-                }
             }
+
+            //foreach (Control c in main.Controls)
+            //{
+            //    if (c is DrinkButton && c.Name != element.Name)
+            //    {
+            //        (c as DrinkButton).EmptyButton();
+            //    }
+            //    else if (c is DrinkButton)
+            //    {
+            //        element.SetSelectedButton();
+            //    }
+            //}
 
             main.labelDrink.Text = "Напиток: " + thisDrink.name;
 

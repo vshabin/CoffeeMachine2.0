@@ -20,6 +20,7 @@ namespace CoffeeMachine2._0
         private delegate void cfStageDelegate();
         cfStageDelegate[] massOfStages = new cfStageDelegate[4];
         string tempDrinkDesign = "Холодный";
+        public static List<DrinkButton> drinkButtons = new List<DrinkButton>();
 
         public Form1()
         {
@@ -40,6 +41,8 @@ namespace CoffeeMachine2._0
             CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
             SetStage(CoffeeMachine.cfStage);
         }
+
+
 
         public void SetStage(CoffeeMachine.CoffeeMachineStage stage)
         {
@@ -238,32 +241,6 @@ namespace CoffeeMachine2._0
             SetSettingsForDrinkButtons();
         }
 
-        private void drinkButton1_Click(object sender, EventArgs e)
-        {
-            //foreach (Control c in Controls)
-            //{
-            //    if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
-            //    {
-            //        (c as DrinkButton).EmptyButton();
-            //    }
-            //    else if(c is DrinkButton)
-            //    {
-            //        (sender as DrinkButton).SetSelectedButton();
-            //    }
-            //}
-
-            //labelDrink.Text = "Напиток: " + (sender as DrinkButton).thisDrink.name;
-
-            //labelAmount.Text = "Сумма к оплате: " + (sender as DrinkButton).thisDrink.cost;
-
-            //CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
-
-            //if((sender as DrinkButton).selected)
-            //    CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK;
-            //else
-            //    CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
-            //SetStage(CoffeeMachine.cfStage);
-        }
 
         private void butСancellation_Click(object sender, EventArgs e)
         {
