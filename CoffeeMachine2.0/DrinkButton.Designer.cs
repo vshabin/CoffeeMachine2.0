@@ -42,6 +42,7 @@ namespace CoffeeMachine2._0
             this.labelInfoAboutDrinkDB.Size = new System.Drawing.Size(35, 13);
             this.labelInfoAboutDrinkDB.TabIndex = 0;
             this.labelInfoAboutDrinkDB.Text = "label1";
+            this.labelInfoAboutDrinkDB.Click += new System.EventHandler(this.pbDrinkButton_Click);
             // 
             // pbDrinkButton
             // 
@@ -61,6 +62,7 @@ namespace CoffeeMachine2._0
             this.Controls.Add(this.labelInfoAboutDrinkDB);
             this.Name = "DrinkButton";
             this.Size = new System.Drawing.Size(232, 63);
+            this.Click += new System.EventHandler(this.pbDrinkButton_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbDrinkButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

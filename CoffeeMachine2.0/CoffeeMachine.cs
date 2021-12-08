@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeeMachine2._0
 {
-    class CoffeeMachine
+    public class CoffeeMachine
     {
         public int balance = 0;
         public int change = 0;

@@ -52,17 +52,24 @@ namespace CoffeeMachine2._0
 
         private void pbDrinkButton_Click(object sender, EventArgs e)
         {
-            SetSelectedButton();
             Form1 main = this.Parent as Form1;
-            foreach (Control c in Controls)
+
+            DrinkButton element;
+
+            if (!(sender is DrinkButton))
+                element = (DrinkButton)((Control)sender).Parent;
+            else
+                element = sender as DrinkButton;
+
+            foreach (Control c in main.Controls)
             {
-                if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
+                if (c is DrinkButton && c.Name != element.Name)
                 {
                     (c as DrinkButton).EmptyButton();
                 }
                 else if (c is DrinkButton)
                 {
-                    (sender as DrinkButton).SetSelectedButton();
+                    element.SetSelectedButton();
                 }
             }
 
@@ -76,6 +83,7 @@ namespace CoffeeMachine2._0
                 CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK;
             else
                 CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            main.SetStage(CoffeeMachine.cfStage);
         }
     }
 }

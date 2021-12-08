@@ -41,7 +41,7 @@ namespace CoffeeMachine2._0
             SetStage(CoffeeMachine.cfStage);
         }
 
-        void SetStage(CoffeeMachine.CoffeeMachineStage stage)
+        public void SetStage(CoffeeMachine.CoffeeMachineStage stage)
         {
             int stageNumber = (int)stage;
 
@@ -77,7 +77,7 @@ namespace CoffeeMachine2._0
                     (db as DrinkButton).EmptyButton();
                     db.Enabled = true;
                 }
-                
+
             }
             CoffeeMachine.selectedDrink = null; 
             if(pbAnimation.Image != null)
@@ -240,29 +240,29 @@ namespace CoffeeMachine2._0
 
         private void drinkButton1_Click(object sender, EventArgs e)
         {
-            foreach (Control c in Controls)
-            {
-                if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
-                {
-                    (c as DrinkButton).EmptyButton();
-                }
-                else if(c is DrinkButton)
-                {
-                    (sender as DrinkButton).SetSelectedButton();
-                }
-            }
+            //foreach (Control c in Controls)
+            //{
+            //    if (c is DrinkButton && c.Name != (sender as DrinkButton).Name)
+            //    {
+            //        (c as DrinkButton).EmptyButton();
+            //    }
+            //    else if(c is DrinkButton)
+            //    {
+            //        (sender as DrinkButton).SetSelectedButton();
+            //    }
+            //}
 
-            labelDrink.Text = "Напиток: " + (sender as DrinkButton).thisDrink.name;
+            //labelDrink.Text = "Напиток: " + (sender as DrinkButton).thisDrink.name;
 
-            labelAmount.Text = "Сумма к оплате: " + (sender as DrinkButton).thisDrink.cost;
+            //labelAmount.Text = "Сумма к оплате: " + (sender as DrinkButton).thisDrink.cost;
 
-            CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
+            //CoffeeMachine.selectedDrink = (sender as DrinkButton).thisDrink;
 
-            if((sender as DrinkButton).selected)
-                CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK;
-            else
-                CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
-            SetStage(CoffeeMachine.cfStage);
+            //if((sender as DrinkButton).selected)
+            //    CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTED_DRINK;
+            //else
+            //    CoffeeMachine.cfStage = CoffeeMachine.CoffeeMachineStage.SELECTING_DRINK;
+            //SetStage(CoffeeMachine.cfStage);
         }
 
         private void butСancellation_Click(object sender, EventArgs e)
